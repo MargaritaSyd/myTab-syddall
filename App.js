@@ -1,10 +1,12 @@
 import { useState} from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, TextInput, Button, FlatList } from 'react-native';
+import { StyleSheet, Text, View, TextInput, Button, FlatList, Modal } from 'react-native';
 
 export default function App() {
   const [textInput , setTextInput] = useState('');
   const [itemList , setItemList] = useState([]);
+  const [itemSelected , setItemSelected] = useState({});
+  const [modalVisible , setModalVisible] = useState(false);
 
   const handleChangeText = (text) => {
     setTextInput(text)
@@ -20,8 +22,19 @@ export default function App() {
     ])
   }
 
+  const handleOnDelete = (item) => {
+    setModalVisible(true)
+    setItemSelected(item)
+  }
+
+  const handleConfirmDelete = () => {
+    const {id} = itemSelected
+    setItemList(itemList.filter(item => item.id !== id))
+    setModalVisible(false)
+    setItemSelected({})
+  }
  // console.log(textInput)
- console.log(itemList)
+// console.log(itemList)
 
   return (
     <View style={styles.container}>
@@ -39,26 +52,36 @@ export default function App() {
         title="Add item"
       />
       </View>
-      {/* <View>
-        {itemList.map(item => (
-          <View key={item.id}>
-            <Text> {item.value} </Text>
-          </View>
-        ))
-        }
-      </View> */}
+      
       <FlatList 
         data={itemList}
         renderItem={({item}) => (
           <View  style={styles.item}>
             <Text> {item.value} </Text>
+            <Button 
+              onPress={() => handleOnDelete(item)}
+              title='X'
+            />
           </View>
 
         )}
 
-     // keyExtractor={ item => item.id}
+      keyExtractor={ item => item.id}
       /> 
-
+      <Modal animationType='slide' visible={modalVisible}>
+          <View>
+            <View>
+              <Text> Estas seguro? </Text>
+              <Text> {itemSelected.value} </Text>
+            </View>
+            <View>
+              <Button
+              onPress={handleConfirmDelete}
+              title='Confirmar'
+              />
+            </View>
+          </View>
+      </Modal>
      
       <StatusBar style="auto" />
     </View>
@@ -83,6 +106,9 @@ const styles = StyleSheet.create({
     padding: 20,
     marginVertical: 20,
     borderColor: 'black',
-    borderWidth: 1
+    borderWidth: 1,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between'
   }
 });
