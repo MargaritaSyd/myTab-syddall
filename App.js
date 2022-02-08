@@ -1,12 +1,21 @@
 import { useState} from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, TextInput, Button, FlatList, Modal } from 'react-native';
+import { StyleSheet, Text, View, TextInput, Button, FlatList, Modal, SectionList } from 'react-native';
 
 export default function App() {
   const [textInput , setTextInput] = useState('');
   const [itemList , setItemList] = useState([]);
   const [itemSelected , setItemSelected] = useState({});
   const [modalVisible , setModalVisible] = useState(false);
+
+  // const DATA = [
+  //   {
+  //     title: "Medida",
+  //     data: ["u", "ml"]
+  //   }
+  // ];
+
+  
 
   const handleChangeText = (text) => {
     setTextInput(text)
