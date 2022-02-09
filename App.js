@@ -1,6 +1,7 @@
 import { useState} from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, TextInput, Button, FlatList, Modal, SectionList } from 'react-native';
+import AddItem from './components/AddItem.js';
 
 export default function App() {
   const [textInput , setTextInput] = useState('');
@@ -8,14 +9,7 @@ export default function App() {
   const [itemSelected , setItemSelected] = useState({});
   const [modalVisible , setModalVisible] = useState(false);
 
-  // const DATA = [
-  //   {
-  //     title: "Medida",
-  //     data: ["u", "ml"]
-  //   }
-  // ];
-
-  
+ 
 
   const handleChangeText = (text) => {
     setTextInput(text)
@@ -48,19 +42,11 @@ export default function App() {
   return (
     <View style={styles.container}>
       <Text>Agregá un nuevo item a tu inventario</Text>
-      <View style={styles.inputContainer}>
-      
-      <TextInput 
-        style={styles.inputStyle} 
-        placeholder='Marca'
-        onChangeText={handleChangeText}
-        value={textInput}
+      <AddItem
+        textInput={textInput}
+        handleChangeText={handleChangeText}
+        handleOnPress={handleOnPress}
       />
-      <Button  
-        onPress={handleOnPress}
-        title="Add item"
-      />
-      </View>
       
       <FlatList 
         data={itemList}
@@ -108,9 +94,7 @@ const styles = StyleSheet.create({
     marginRight: 20
     
   },
-  inputContainer: {
-  flexDirection: "row"
-  },
+  
   item: {
     padding: 20,
     marginVertical: 20,
