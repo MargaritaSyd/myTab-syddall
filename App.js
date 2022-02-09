@@ -43,25 +43,32 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-      <View>
-        <Image style={styles.imageLogo} source={require('./public/logo.png')}/>
+      <View style={styles.imageLogoConteiner}>
+        <Image  style={styles.imageLogo} source={require('./public/logo.png')}/>
       </View>
-      <Text>Agregá un nuevo item a tu inventario</Text>
+      <View>
+        <Text style={styles.title}> Tu Stock </Text>
+      </View>
+      < ItemList 
+     itemList = {itemList}
+     handleOnDelete = {handleOnDelete}
+     />
+       < ModalDelete
+      modalVisible = {modalVisible}
+      itemSelected = {itemSelected}
+      handleConfirmDelete = {handleConfirmDelete}
+      />
+      <View>
+        <Text style={styles.title}>Agregá un nuevo item a tu stock</Text>
+      </View>
       <AddItem
         textInput={textInput}
         handleChangeText={handleChangeText}
         handleOnPress={handleOnPress}
       />
       
-     < ItemList 
-     itemList = {itemList}
-     handleOnDelete = {handleOnDelete}
-     />
-      < ModalDelete
-      modalVisible = {modalVisible}
-      itemSelected = {itemSelected}
-      handleConfirmDelete = {handleConfirmDelete}
-      />
+     
+    
       <StatusBar style="auto" />
     </View>
   );
@@ -72,5 +79,17 @@ const styles = StyleSheet.create({
     padding:30,
     backgroundColor: "#050a30"
   },
+  title: {
+    fontSize: 30,
+    fontWeight: 'bold',
+    color: "#e7e1a0"
+  },
   
+  imageLogo: {
+    width: 40,
+    height: 'auto',
+    padding: 50,
+    
+
+  }
 });

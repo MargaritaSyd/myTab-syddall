@@ -8,7 +8,7 @@ function ItemList({itemList , handleOnDelete }){
         data={itemList}
         renderItem={({item}) => (
           <View  style={styles.item}>
-            <Text> {item.value} </Text>
+            <Text style={styles.textList}> {item.value} </Text>
             <Button 
               onPress={() => handleOnDelete(item)}
               title='X'

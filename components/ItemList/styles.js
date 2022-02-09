@@ -4,12 +4,16 @@ const styles = StyleSheet.create({
     item: {
         padding: 20,
         marginVertical: 20,
-        borderColor: 'black',
+        borderColor: '#a2532a',
         borderWidth: 1,
         flexDirection: 'row',
         alignItems: 'center',
-        justifyContent: 'space-between'
-      }
+        justifyContent: 'space-between',
+        color: "#a2532a"
+      },
+    textList: {
+      color: "#a2532a"
+      },
 })
 
 export default styles
