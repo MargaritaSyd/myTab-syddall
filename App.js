@@ -1,6 +1,6 @@
 import { useState} from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, TextInput, Button, FlatList, Modal, SectionList } from 'react-native';
+import { StyleSheet, Text, View, Image } from 'react-native';
 import AddItem from './components/AddItems/AddItem.js';
 import ModalDelete from './components/Modal.js';
 import ItemList from './components/ItemList/ItemList.js';
@@ -43,6 +43,9 @@ export default function App() {
 
   return (
     <View style={styles.container}>
+      <View>
+        <Image style={styles.imageLogo} source={require('./public/logo.png')}/>
+      </View>
       <Text>Agregá un nuevo item a tu inventario</Text>
       <AddItem
         textInput={textInput}
@@ -67,6 +70,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     padding:30,
+    backgroundColor: "#050a30"
   },
   
 });
