@@ -4,6 +4,7 @@ import { StyleSheet, Text, View, Image } from 'react-native';
 import AddItem from './components/AddItems/AddItem.js';
 import ModalDelete from './components/Modal.js';
 import ItemList from './components/ItemList/ItemList.js';
+import Logo from './components/Header/Logo.js';
 
 export default function App() {
   const [textInput , setTextInput] = useState('');
@@ -43,9 +44,7 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-      <View style={styles.imageLogoConteiner}>
-        <Image  style={styles.imageLogo} source={require('./public/logo.png')}/>
-      </View>
+      <Logo/>
       <View>
         <Text style={styles.title}> Tu Stock </Text>
       </View>
@@ -85,11 +84,5 @@ const styles = StyleSheet.create({
     color: "#e7e1a0"
   },
   
-  imageLogo: {
-    width: 40,
-    height: 'auto',
-    padding: 50,
-    
 
-  }
 });
