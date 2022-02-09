@@ -1,5 +1,6 @@
 import React from "react";
-import { StyleSheet, View, TextInput, Button} from 'react-native';
+import { View, TextInput, Button} from 'react-native';
+import styles from "./styles";
 
 function AddItem({textInput, handleChangeText, handleOnPress}){ 
 
@@ -22,17 +23,5 @@ function AddItem({textInput, handleChangeText, handleOnPress}){
     )
 }
 
-const styles = StyleSheet.create({
-    inputStyle: {
-        borderBottomColor: "black",
-        borderBottomWidth: 1,
-        flex: 1,
-        marginRight: 20
-        
-      },
-      inputContainer: {
-      flexDirection: "row"
-      },
-})
 
 export default AddItem

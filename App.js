@@ -1,7 +1,9 @@
 import { useState} from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, TextInput, Button, FlatList, Modal, SectionList } from 'react-native';
-import AddItem from './components/AddItem.js';
+import AddItem from './components/AddItems/AddItem.js';
+import ModalDelete from './components/Modal.js';
+import ItemList from './components/ItemList/ItemList.js';
 
 export default function App() {
   const [textInput , setTextInput] = useState('');
@@ -48,36 +50,15 @@ export default function App() {
         handleOnPress={handleOnPress}
       />
       
-      <FlatList 
-        data={itemList}
-        renderItem={({item}) => (
-          <View  style={styles.item}>
-            <Text> {item.value} </Text>
-            <Button 
-              onPress={() => handleOnDelete(item)}
-              title='X'
-            />
-          </View>
-
-        )}
-
-      keyExtractor={ item => item.id}
-      /> 
-      <Modal animationType='slide' visible={modalVisible}>
-          <View>
-            <View>
-              <Text> Estas seguro? </Text>
-              <Text> {itemSelected.value} </Text>
-            </View>
-            <View>
-              <Button
-              onPress={handleConfirmDelete}
-              title='Confirmar'
-              />
-            </View>
-          </View>
-      </Modal>
-     
+     < ItemList 
+     itemList = {itemList}
+     handleOnDelete = {handleOnDelete}
+     />
+      < ModalDelete
+      modalVisible = {modalVisible}
+      itemSelected = {itemSelected}
+      handleConfirmDelete = {handleConfirmDelete}
+      />
       <StatusBar style="auto" />
     </View>
   );
@@ -87,21 +68,5 @@ const styles = StyleSheet.create({
   container: {
     padding:30,
   },
-  inputStyle: {
-    borderBottomColor: "black",
-    borderBottomWidth: 1,
-    flex: 1,
-    marginRight: 20
-    
-  },
   
-  item: {
-    padding: 20,
-    marginVertical: 20,
-    borderColor: 'black',
-    borderWidth: 1,
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-between'
-  }
 });
