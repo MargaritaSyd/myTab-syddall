@@ -1,6 +1,7 @@
 import React from "react";
-import { Text, View, TextInput, Button, FlatList, Modal, SectionList } from 'react-native';
+import { Text, View, TextInput, FlatList, Modal, SectionList } from 'react-native';
 import styles from "./styles";
+import Button from "../Button";
 
 function ItemList({itemList , handleOnDelete }){ 
     return (
@@ -9,6 +10,8 @@ function ItemList({itemList , handleOnDelete }){
         renderItem={({item}) => (
           <View  style={styles.item}>
             <Text style={styles.textList}> {item.value} </Text>
+            <Text style={styles.textList}> {item.stock} </Text>
+
             <Button 
               onPress={() => handleOnDelete(item)}
               title='X'

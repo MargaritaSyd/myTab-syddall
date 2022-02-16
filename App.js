@@ -5,9 +5,13 @@ import AddItem from './components/AddItems/AddItem.js';
 import ModalDelete from './components/Modal.js';
 import ItemList from './components/ItemList/ItemList.js';
 import Logo from './components/Header/Logo.js';
+import Colors from './constants/Colors.js';
+
 
 export default function App() {
   const [textInput , setTextInput] = useState('');
+  const [stockInput , setStockInput] = useState('');
+  
   const [itemList , setItemList] = useState([]);
   const [itemSelected , setItemSelected] = useState({});
   const [modalVisible , setModalVisible] = useState(false);
@@ -17,12 +21,16 @@ export default function App() {
   const handleChangeText = (text) => {
     setTextInput(text)
   }
-
+  const handleChangeStock = (text) => {
+    setStockInput(text.replace(/[ˆ0-9]/g,''))
+  }
   const handleOnPress = () => {
     setTextInput('')
+    setStockInput('')
     setItemList([
       ...itemList, {
         value: textInput,
+        stock: stockInput,
         id: Math.random().toString(),
       },
     ])
@@ -62,7 +70,9 @@ export default function App() {
       </View>
       <AddItem
         textInput={textInput}
+        stockInput={stockInput}
         handleChangeText={handleChangeText}
+        handleChangeStock={handleChangeStock}
         handleOnPress={handleOnPress}
       />
       
@@ -76,12 +86,13 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     padding:30,
-    backgroundColor: "#050a30"
+    backgroundColor: Colors.backGround,
+    flex: 1
   },
   title: {
     fontSize: 30,
     fontWeight: 'bold',
-    color: "#e7e1a0"
+    color: Colors.primary
   },
   
 

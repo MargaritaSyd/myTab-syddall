@@ -14,7 +14,9 @@ const styles = StyleSheet.create({
       },
       inputContainer: {
       flexDirection: "row",
-      backgroundColor: "#dbec66"
+      backgroundColor: "#dbec66",
+      justifyContent: 'space-between'
+     
 
       },
 })
