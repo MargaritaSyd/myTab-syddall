@@ -3,7 +3,7 @@ import { Text, View, TextInput, FlatList, Modal, SectionList } from 'react-nativ
 import styles from "./styles";
 import Button from "../Button";
 
-function ItemList({itemList , handleOnDelete }){ 
+function ItemList({itemList , handleOnDelete , handleDetail}){ 
     return (
         <FlatList 
         data={itemList}
@@ -11,7 +11,10 @@ function ItemList({itemList , handleOnDelete }){
           <View  style={styles.item}>
             <Text style={styles.textList}> {item.value} </Text>
             <Text style={styles.textList}> {item.stock} </Text>
-
+            <Button 
+              onPress={() => handleDetail(item)}
+              title='Detail'
+            />
             <Button 
               onPress={() => handleOnDelete(item)}
               title='X'

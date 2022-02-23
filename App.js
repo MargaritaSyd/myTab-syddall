@@ -15,8 +15,7 @@ export default function App() {
   const [itemList , setItemList] = useState([]);
   const [itemSelected , setItemSelected] = useState({});
   const [modalVisible , setModalVisible] = useState(false);
-
- 
+  const [confirmedDeteail , setConfirmedDetail] = useState('');
 
   const handleChangeText = (text) => {
     setTextInput(text)
@@ -40,7 +39,10 @@ export default function App() {
     setModalVisible(true)
     setItemSelected(item)
   }
-
+  const handleDetail = (item) => {
+    setConfirmedDetail(true);
+    setItemSelected(item)
+  }
   const handleConfirmDelete = () => {
     const {id} = itemSelected
     setItemList(itemList.filter(item => item.id !== id))
@@ -59,7 +61,10 @@ export default function App() {
       < ItemList 
      itemList = {itemList}
      handleOnDelete = {handleOnDelete}
+     handleDetail = {handleDetail}
      />
+         {confirmedDeteail ? <Text> OK</Text> : null}
+       
        < ModalDelete
       modalVisible = {modalVisible}
       itemSelected = {itemSelected}
@@ -75,7 +80,7 @@ export default function App() {
         handleChangeStock={handleChangeStock}
         handleOnPress={handleOnPress}
       />
-      
+
      
     
       <StatusBar style="auto" />
