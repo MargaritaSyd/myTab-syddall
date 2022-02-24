@@ -1,9 +1,5 @@
 import { useState} from 'react';
-import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Image } from 'react-native';
-import AddItem from './components/AddItems/AddItem.js';
-import ModalDelete from './components/Modal.js';
-import ItemList from './components/ItemList/ItemList.js';
 import Logo from './components/Header/Logo.js';
 import Colors from './constants/Colors.js';
 import HomePageScreen from './screen/HomePageScreen.js';
@@ -12,28 +8,24 @@ import ScreenTest from './screen/ScreenTest.js';
 
 export default function App() {
 
-  const [actionSelected , setActionSelected] = useState('');
+  const [actionSelected , setActionSelected] = useState("");
 
-  // const handleHomePage = (actionSelected) => {
-  //   // setActionSelected(actionSelected)
-  // //   if(actionSelected == true){
-  //     alert('ok')
-  //   //}
-  //  }
 
   const handleHomePage = (actionSelected) => {
      setActionSelected(actionSelected)
     }
 
+    // const handleStockScreen = (actionSelected) => {
+    //   setActionSelected(actionSelected)
+    // }
+
     let content = <HomePageScreen onHandleHomePage = {handleHomePage} />
 
-    if(actionSelected == true){
-      content = <ScreenTest />
-    // alert('ok')
+    if(actionSelected == "stockScreen"){
+      content = <StockScreen/>
      }
 
-  //let content = <HomePageScreen />
-
+  
   
    
 

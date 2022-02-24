@@ -4,7 +4,6 @@ import { StyleSheet, Text, View, Image } from 'react-native';
 import AddItem from '../components/AddItems/AddItem.js';
 import ModalDelete from '../components/Modal.js';
 import ItemList from '../components/ItemList/ItemList.js';
-import Logo from '../components/Header/Logo.js';
 import Colors from '../constants/Colors.js';
 
 
@@ -17,6 +16,8 @@ function StockScreen(){
     const [modalVisible , setModalVisible] = useState(false);
     const [confirmedDeteail , setConfirmedDetail] = useState('');
   
+    const [actionSelected , setActionSelected] = useState("");
+
     const handleChangeText = (text) => {
       setTextInput(text)
     }
@@ -40,8 +41,10 @@ function StockScreen(){
       setItemSelected(item)
     }
     const handleDetail = (item) => {
-      setConfirmedDetail(true);
-      setItemSelected(item)
+      alert('ok')
+     // setActionSelected("itemDetail")
+     // setItemSelected(item)
+     // onHandleStockScreen(actionSelected)
     }
     const handleConfirmDelete = () => {
       const {id} = itemSelected
@@ -54,7 +57,6 @@ function StockScreen(){
   
     return (
       <View style={styles.container}>
-        <Logo/>
         <View>
           <Text style={styles.title}> Tu Stock </Text>
         </View>

@@ -9,7 +9,7 @@ function HomePageScreen({onHandleHomePage}){
     const [actionSelected , setActionSelected] = useState('')
 
     const handleOnHomeToScreen = () => {
-        setActionSelected(true)
+        setActionSelected("stockScreen")
         onHandleHomePage(actionSelected);
    
     // alert(actionSelected)

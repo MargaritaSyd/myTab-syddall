@@ -9,12 +9,9 @@ function ItemList({itemList , handleOnDelete , handleDetail}){
         data={itemList}
         renderItem={({item}) => (
           <View  style={styles.item}>
-            <Text style={styles.textList}> {item.value} </Text>
+            <Button onPress={() => handleDetail(item)} title = {item.value} ></Button>
             <Text style={styles.textList}> {item.stock} </Text>
-            <Button 
-              onPress={() => handleDetail(item)}
-              title='Detail'
-            />
+            
             <Button 
               onPress={() => handleOnDelete(item)}
               title='X'
