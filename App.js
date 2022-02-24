@@ -6,99 +6,35 @@ import ModalDelete from './components/Modal.js';
 import ItemList from './components/ItemList/ItemList.js';
 import Logo from './components/Header/Logo.js';
 import Colors from './constants/Colors.js';
+import HomePageScreen from './screen/HomePageScreen.js';
+import StockScreen from './screen/StockScreen.js';
 
 
 export default function App() {
-  const [textInput , setTextInput] = useState('');
-  const [stockInput , setStockInput] = useState('');
-  
-  const [itemList , setItemList] = useState([]);
-  const [itemSelected , setItemSelected] = useState({});
-  const [modalVisible , setModalVisible] = useState(false);
-  const [confirmedDeteail , setConfirmedDetail] = useState('');
 
-  const handleChangeText = (text) => {
-    setTextInput(text)
-  }
-  const handleChangeStock = (text) => {
-    setStockInput(text.replace(/[ˆ0-9]/g,''))
-  }
-  const handleOnPress = () => {
-    setTextInput('')
-    setStockInput('')
-    setItemList([
-      ...itemList, {
-        value: textInput,
-        stock: stockInput,
-        id: Math.random().toString(),
-      },
-    ])
+  const [actionSelected , setActionSelected] = useState('')
+
+  const handleHomePage = selectedAction => {
+    setActionSelected(actionSelected)
   }
 
-  const handleOnDelete = (item) => {
-    setModalVisible(true)
-    setItemSelected(item)
-  }
-  const handleDetail = (item) => {
-    setConfirmedDetail(true);
-    setItemSelected(item)
-  }
-  const handleConfirmDelete = () => {
-    const {id} = itemSelected
-    setItemList(itemList.filter(item => item.id !== id))
-    setModalVisible(false)
-    setItemSelected({})
-  }
- // console.log(textInput)
-// console.log(itemList)
+  let content = <HomePageScreen onHomePage={handleHomePage} />
 
-  return (
-    <View style={styles.container}>
-      <Logo/>
-      <View>
-        <Text style={styles.title}> Tu Stock </Text>
+  if(itemDetail){
+    content = <StockScreen/>
+  }
+
+    return(
+      <View style = {styles.container}>
+        <Logo/>
+        {content}
       </View>
-      < ItemList 
-     itemList = {itemList}
-     handleOnDelete = {handleOnDelete}
-     handleDetail = {handleDetail}
-     />
-         {confirmedDeteail ? <Text> OK</Text> : null}
-       
-       < ModalDelete
-      modalVisible = {modalVisible}
-      itemSelected = {itemSelected}
-      handleConfirmDelete = {handleConfirmDelete}
-      />
-      <View>
-        <Text style={styles.title}>Agregá un nuevo item a tu stock</Text>
-      </View>
-      <AddItem
-        textInput={textInput}
-        stockInput={stockInput}
-        handleChangeText={handleChangeText}
-        handleChangeStock={handleChangeStock}
-        handleOnPress={handleOnPress}
-      />
+    )
+  }
 
-     
-    
-      <StatusBar style="auto" />
-    </View>
-  );
-}
-
-const styles = StyleSheet.create({
-  container: {
-    padding:30,
-    backgroundColor: Colors.backGround,
-    flex: 1
-  },
-  title: {
-    fontSize: 30,
-    fontWeight: 'bold',
-    color: Colors.primary
-  },
-  
-
-});
+  const styles = StyleSheet.create({
+    container: {
+      backgroundColor: Colors.backGround,
+      flex: 1
+    }
+  })
