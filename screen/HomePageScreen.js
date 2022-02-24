@@ -17,7 +17,7 @@ function HomePageScreen({onHandleHomePage}){
     
         return(
             <View style={styles.containerHome}>
-                <Text> Home Page Screen</Text>
+                <Text style={styles.textHome}> Home Page Screen</Text>
                 <Button title="Stock" onPress={handleOnHomeToScreen}/>
             </View>
         )
@@ -29,6 +29,9 @@ const styles = StyleSheet.create({
       backgroundColor: Colors.backGround,
       flex: 1
     },
+    textHome: {
+        color: Colors.accent
+    }
 })
   
 

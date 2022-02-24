@@ -8,7 +8,7 @@ import Logo from './components/Header/Logo.js';
 import Colors from './constants/Colors.js';
 import HomePageScreen from './screen/HomePageScreen.js';
 import StockScreen from './screen/StockScreen.js';
-import testScreen from './screen/testScreen.js';
+import ScreenTest from './screen/ScreenTest.js';
 
 export default function App() {
 
@@ -28,8 +28,8 @@ export default function App() {
     let content = <HomePageScreen onHandleHomePage = {handleHomePage} />
 
     if(actionSelected == true){
-     // content = < testScreen />
-     alert('ok')
+      content = <ScreenTest />
+    // alert('ok')
      }
 
   //let content = <HomePageScreen />

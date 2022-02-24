@@ -4,13 +4,14 @@ import Colors from "../constants/Colors";
 import Button from "../components/Button";
 
 
-function testScreen(){
-
-    return(
-        <View style={styles.containerHome}>
-            <Text> test Screen</Text>
-        </View>
-    )
+function ScreenTest(){
+    
+        return(
+            <View style={styles.containerHome}>
+                <Text style={styles.textHome}> Screen Test</Text>
+                
+            </View>
+        )
 }
 
 const styles = StyleSheet.create({
@@ -19,9 +20,12 @@ const styles = StyleSheet.create({
       backgroundColor: Colors.backGround,
       flex: 1
     },
+    textHome: {
+        color: Colors.accent
+    }
 })
   
 
 
 
-export default testScreen
+export default ScreenTest
