@@ -1,13 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
 import { StyleSheet, Text, View } from 'react-native';
 import Colors from "../constants/Colors";
+import Button from "../components/Button";
 
-function HomePageScreen(){
-    return(
-        <View style={styles.containerHome}>
-            <Text> Home Page Screen</Text>
-        </View>
-    )
+
+function HomePageScreen({onHandleHomePage}){
+    
+    const [actionSelected , setActionSelected] = useState('')
+
+    const handleOnHomeToScreen = () => {
+        setActionSelected(true)
+        onHandleHomePage(actionSelected);
+   
+    // alert(actionSelected)
+    }
+    
+        return(
+            <View style={styles.containerHome}>
+                <Text> Home Page Screen</Text>
+                <Button title="Stock" onPress={handleOnHomeToScreen}/>
+            </View>
+        )
 }
 
 const styles = StyleSheet.create({

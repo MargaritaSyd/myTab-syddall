@@ -8,21 +8,34 @@ import Logo from './components/Header/Logo.js';
 import Colors from './constants/Colors.js';
 import HomePageScreen from './screen/HomePageScreen.js';
 import StockScreen from './screen/StockScreen.js';
-
+import testScreen from './screen/testScreen.js';
 
 export default function App() {
 
-  const [actionSelected , setActionSelected] = useState('')
+  const [actionSelected , setActionSelected] = useState('');
 
-  const handleHomePage = selectedAction => {
-    setActionSelected(actionSelected)
-  }
+  // const handleHomePage = (actionSelected) => {
+  //   // setActionSelected(actionSelected)
+  // //   if(actionSelected == true){
+  //     alert('ok')
+  //   //}
+  //  }
 
-  let content = <HomePageScreen onHomePage={handleHomePage} />
+  const handleHomePage = (actionSelected) => {
+     setActionSelected(actionSelected)
+    }
 
-  if(itemDetail){
-    content = <StockScreen/>
-  }
+    let content = <HomePageScreen onHandleHomePage = {handleHomePage} />
+
+    if(actionSelected == true){
+     // content = < testScreen />
+     alert('ok')
+     }
+
+  //let content = <HomePageScreen />
+
+  
+   
 
     return(
       <View style = {styles.container}>
