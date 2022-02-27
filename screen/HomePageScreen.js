@@ -17,8 +17,12 @@ function HomePageScreen({onHandleHomePage}){
     
         return(
             <View style={styles.containerHome}>
-                <Text style={styles.textHome}> Home Page Screen</Text>
-                <Button title="Stock" onPress={handleOnHomeToScreen}/>
+                <Text style={styles.textHome}> Bienvenido!</Text>
+
+                <Button title="Stock" style={styles.buttonHome} onPress={handleOnHomeToScreen}/>
+                <Button title="Inventario" />
+                <Button title="Pedidos" />
+            
             </View>
         )
 }
@@ -31,6 +35,9 @@ const styles = StyleSheet.create({
     },
     textHome: {
         color: Colors.accent
+    },
+    buttonHome: {
+        marginTop: 5
     }
 })
   
