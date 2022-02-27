@@ -5,10 +5,19 @@ import Colors from './constants/Colors.js';
 import HomePageScreen from './screen/HomePageScreen.js';
 import StockScreen from './screen/StockScreen.js';
 import ScreenTest from './screen/ScreenTest.js';
+import {useFonts} from 'expo-font';
+import AppLoading from "expo-app-loading";
+
 
 export default function App() {
 
   const [actionSelected , setActionSelected] = useState("");
+
+  const [loaded] = useFonts({
+    'Hubballi-Regular' : require('./assets/fonts/Hubballi-Regular.ttf')
+})
+
+  if(!loaded) return <AppLoading />
 
 
   const handleHomePage = (actionSelected) => {
