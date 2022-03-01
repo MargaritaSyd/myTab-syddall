@@ -20,11 +20,15 @@ function HomePageScreen({onHandleHomePage}){
         return(
             <View style={styles.containerHome}>
                 <Text style={styles.textHome}> Bienvenido!</Text>
-
-                <Button title="Stock" style={styles.buttonHome} onPress={handleOnHomeToScreen}/>
-                <Button title="Inventario" style={styles.buttonHome}/>
-                <Button title="Pedidos" style={styles.buttonHome}/>
-            
+                <View style={styles.buttonConteiner}>
+                    <Button title="Stock" style={styles.buttonHome} onPress={handleOnHomeToScreen}/>
+                </View>
+                <View style={styles.buttonConteiner}>
+                    <Button title="Inventario" style={styles.buttonHome}/>
+                </View>
+                <View style={styles.buttonConteiner}>
+                    <Button title="Pedidos" style={styles.buttonHome}/>
+                </View>
             </View>
         )
 }
@@ -42,10 +46,18 @@ const styles = StyleSheet.create({
     },
     buttonHome: {
         marginTop: 5,
+        marginBottom: 5,
         fontFamily: Typography.titleFont,
         fontSize: 20,
         color: Colors.backGround,
         
+
+    },
+    buttonConteiner: {
+        marginBottom: 10,
+        marginLeft: 15,
+        width: 300,
+        maxWidth: '80%'
 
     }
 })
