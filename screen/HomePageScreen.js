@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { StyleSheet, Text, View } from 'react-native';
+import { Dimensions, StyleSheet, Text, View, useWindowDimensions } from 'react-native';
 import Colors from "../constants/Colors";
 import Button from "../components/Button";
 import Typography from "../constants/Typography";
@@ -9,6 +9,9 @@ import { color } from "react-native/Libraries/Components/View/ReactNativeStyleAt
 function HomePageScreen({onHandleHomePage}){
     
     const [actionSelected , setActionSelected] = useState('')
+    const { width, height } = useWindowDimensions();
+
+    const isPortrait = height  >= width;
 
     const handleOnHomeToScreen = () => {
         setActionSelected("stockScreen")
@@ -18,7 +21,7 @@ function HomePageScreen({onHandleHomePage}){
     }
     
         return(
-            <View style={styles.containerHome}>
+            <View style={isPortrait ? styles.containerHome : styles.containerHomeLandscape}>
                 <Text style={styles.textHome}> Bienvenido!</Text>
                 <View style={styles.buttonConteiner}>
                     <Button title="Stock" style={styles.buttonHome} onPress={handleOnHomeToScreen}/>
@@ -39,6 +42,14 @@ const styles = StyleSheet.create({
       backgroundColor: Colors.backGround,
       flex: 1
     },
+    containerHomeLandscape: {
+        //padding:50,
+        //padding: Dimensions.get('window').width >= 400 ? 100 : 50,
+     
+        marginLeft: '20%',
+        backgroundColor: Colors.backGround,
+        flex: 1
+    },
     textHome: {
         color: Colors.primary,
         fontFamily: Typography.titleFont,
@@ -48,7 +59,7 @@ const styles = StyleSheet.create({
         marginTop: 5,
         marginBottom: 5,
         fontFamily: Typography.titleFont,
-        fontSize: 20,
+        fontSize: Dimensions.get('window').width >= 600 ? 25 : 22,
         color: Colors.backGround,
         
 
