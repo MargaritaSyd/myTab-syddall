@@ -10,6 +10,7 @@ import Test2 from "../screen/Test2";
 import Test3 from "../screen/Test3";
 import StockScreen from "../screen/StockScreen";
 import HomePageScreen from '../screen/HomePageScreen';
+import CategoriesScreen from "../screen/CategoriesScreen";
 
 const Stack = createNativeStackNavigator();
 
@@ -36,6 +37,8 @@ function Navigator(){
                 <Stack.Screen name='Inventory' component={Test1} />
                 <Stack.Screen name='Orders' component={Test2} />
                <Stack.Screen name='Detail' component={Test3} />
+               <Stack.Screen name='Categories' component={CategoriesScreen} />
+            
             </Stack.Navigator>
         </NavigationContainer>
     )

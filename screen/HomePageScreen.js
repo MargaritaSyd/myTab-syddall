@@ -26,6 +26,9 @@ function HomePageScreen({navigation}){
         navigation.navigate('Orders')
      }
 
+     const handleOnHomeToCategoriesScreen = () => {
+        navigation.navigate('Categories')
+     }
     // const handleOnHomeToScreen = () => {
     //     setActionSelected("stockScreen")
     //     onHandleHomePage(actionSelected);
@@ -46,6 +49,9 @@ function HomePageScreen({navigation}){
                 </View>
                 <View style={styles.buttonConteiner}>
                     <Button title="Pedidos" style={styles.buttonHome} onPress={handleOnHomeToOrdersScreen}/>
+                </View>
+                <View style={styles.buttonConteiner}>
+                    <Button title="Categorias" style={styles.buttonHome} onPress={handleOnHomeToCategoriesScreen}/>
                 </View>
             </View>
         )

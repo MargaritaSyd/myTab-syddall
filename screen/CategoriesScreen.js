@@ -1,0 +1,30 @@
+import React, { useState } from "react";
+import { StyleSheet, Text, View } from 'react-native';
+import Colors from "../constants/Colors";
+
+
+function CategoriesScreen(){
+    
+        return(
+            <View style={styles.containerHome}>
+                <Text style={styles.textHome}>  Categories Screen </Text>
+                
+            </View>
+        )
+}
+
+const styles = StyleSheet.create({
+    containerHome: {
+      padding:30,
+      backgroundColor: Colors.backGround,
+      flex: 1
+    },
+    textHome: {
+        color: Colors.accent
+    }
+})
+  
+
+
+
+export default CategoriesScreen
