@@ -2,8 +2,7 @@ import React from "react";
 import { View, TouchableWithoutFeedback, Keyboard , KeyboardAvoidingView} from 'react-native';
 import styles from "./styles";
 import Button from "../Button";
-import Input from '../Input'
-import { KeyboardAvoidingView } from "react-native-web";
+import Input from '../Input';
 
 function AddItem({textInput, stockInput, handleChangeText, handleChangeStock, handleOnPress}){ 
 

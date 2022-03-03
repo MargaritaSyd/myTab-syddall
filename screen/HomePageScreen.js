@@ -3,22 +3,25 @@ import { Dimensions, StyleSheet, Text, View, useWindowDimensions } from 'react-n
 import Colors from "../constants/Colors";
 import Button from "../components/Button";
 import Typography from "../constants/Typography";
-import { color } from "react-native/Libraries/Components/View/ReactNativeStyleAttributes";
 
 
-function HomePageScreen({onHandleHomePage}){
+//function HomePageScreen({onHandleHomePage}){
+function HomePageScreen({navigation}){
     
-    const [actionSelected , setActionSelected] = useState('')
+   // const [actionSelected , setActionSelected] = useState('')
     const { width, height } = useWindowDimensions();
 
     const isPortrait = height  >= width;
 
-    const handleOnHomeToScreen = () => {
-        setActionSelected("stockScreen")
-        onHandleHomePage(actionSelected);
+     const handleOnHomeToScreen = () => {
+        navigation.navigate('Stock')
+     }
+    // const handleOnHomeToScreen = () => {
+    //     setActionSelected("stockScreen")
+    //     onHandleHomePage(actionSelected);
    
-    // alert(actionSelected)
-    }
+    // // alert(actionSelected)
+    // }
     
         return(
             <View style={isPortrait ? styles.containerHome : styles.containerHomeLandscape}>
