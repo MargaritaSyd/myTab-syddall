@@ -1,15 +1,17 @@
 import React, { useState } from "react";
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, FlatList } from 'react-native';
+import { CATEGORIES } from "../data/categories";
 import Colors from "../constants/Colors";
 
 
 function CategoriesScreen(){
     
         return(
-            <View style={styles.containerHome}>
-                <Text style={styles.textHome}>  Categories Screen </Text>
-                
-            </View>
+            <FlatList
+                data = {CATEGORIES}
+                keyExtractor={item => item.id}
+                renderItem={({ item })=> <View><Text>{item.title}</Text></View> }
+            />
         )
 }
 
