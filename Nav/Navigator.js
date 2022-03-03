@@ -13,9 +13,11 @@ const Stack = createNativeStackNavigator();
 function Navigator(){
     return (
         <NavigationContainer>
-            <Stack.Navigator>
+            <Stack.Navigator initialRouteName="Home">
                 <Stack.Screen name='Home' component={HomePageScreen} />
                 <Stack.Screen name='Stock' component={StockScreen} />
+                <Stack.Screen name='Inventory' component={Test1} />
+                <Stack.Screen name='Orders' component={Test2} />
                <Stack.Screen name='Detail' component={Test3} />
             </Stack.Navigator>
         </NavigationContainer>

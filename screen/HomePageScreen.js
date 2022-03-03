@@ -13,9 +13,18 @@ function HomePageScreen({navigation}){
 
     const isPortrait = height  >= width;
 
-     const handleOnHomeToScreen = () => {
+     const handleOnHomeToStockScreen = () => {
         navigation.navigate('Stock')
      }
+
+     const handleOnHomeToInventoryScreen = () => {
+        navigation.navigate('Inventory')
+     }
+
+     const handleOnHomeToOrdersScreen = () => {
+        navigation.navigate('Orders')
+     }
+
     // const handleOnHomeToScreen = () => {
     //     setActionSelected("stockScreen")
     //     onHandleHomePage(actionSelected);
@@ -27,13 +36,13 @@ function HomePageScreen({navigation}){
             <View style={isPortrait ? styles.containerHome : styles.containerHomeLandscape}>
                 <Text style={styles.textHome}> Bienvenido!</Text>
                 <View style={styles.buttonConteiner}>
-                    <Button title="Stock" style={styles.buttonHome} onPress={handleOnHomeToScreen}/>
+                    <Button title="Stock" style={styles.buttonHome} onPress={handleOnHomeToStockScreen}/>
                 </View>
                 <View style={styles.buttonConteiner}>
-                    <Button title="Inventario" style={styles.buttonHome}/>
+                    <Button title="Inventario" style={styles.buttonHome} onPress={handleOnHomeToInventoryScreen}/>
                 </View>
                 <View style={styles.buttonConteiner}>
-                    <Button title="Pedidos" style={styles.buttonHome}/>
+                    <Button title="Pedidos" style={styles.buttonHome} onPress={handleOnHomeToOrdersScreen}/>
                 </View>
             </View>
         )
