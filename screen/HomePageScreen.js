@@ -3,6 +3,7 @@ import { Dimensions, StyleSheet, Text, View, useWindowDimensions } from 'react-n
 import Colors from "../constants/Colors";
 import Button from "../components/Button";
 import Typography from "../constants/Typography";
+import Logo from "../components/Header/Logo";
 
 
 //function HomePageScreen({onHandleHomePage}){
@@ -33,7 +34,9 @@ function HomePageScreen({navigation}){
     // }
     
         return(
+
             <View style={isPortrait ? styles.containerHome : styles.containerHomeLandscape}>
+                <Logo/>
                 <Text style={styles.textHome}> Bienvenido!</Text>
                 <View style={styles.buttonConteiner}>
                     <Button title="Stock" style={styles.buttonHome} onPress={handleOnHomeToStockScreen}/>
