@@ -23,5 +23,10 @@ export const STOCK = [
         id: '5',
         category: '5',
         name: 'Sambuca',
+    },
+    {
+        id: '6',
+        category: '5',
+        name: 'Drambui',
     }
 ]
