@@ -1,18 +1,18 @@
 import React from "react";
 import { View, TouchableOpacity, Text, StyleSheet} from 'react-native';
-import styles from "./AddItems/styles";
 import Colors from "../constants/Colors";
+
 
 function CategoriesItems({item , onSelected}){ 
 
     return(
-        <View>
+        <View style={styles.categoriesStyles}>
             <TouchableOpacity
             style={{...styles.categoriesConteiner, backgroundColor: item.color}}
             onPress={() => onSelected(item)}
             >
                 <View>
-                    <Text> {item.title}</Text>
+                    <Text style={styles.textStyle}> {item.title}</Text>
                 </View>
             </TouchableOpacity>
         </View>
@@ -21,13 +21,35 @@ function CategoriesItems({item , onSelected}){
 }
 
 
-// const styles = StyleSheet.create({
-//     categoriesConteiner: {
-//         flex: 1,
-//         alignItems: 'center',
-//         justifyContent: 'center'
+ const styles = StyleSheet.create({
+     categoriesConteiner: {
+         flex: 1,
+         borderRadius: 10,
 
-//     }
-// })
+         shadowColor: "#000",
+          shadowOffset: {
+            width: 0,
+            height: 9,
+          },
+          shadowOpacity: 0.48,
+          shadowRadius: 11.95,
+
+          elevation: 18,
+
+         alignItems: 'center',
+         justifyContent: 'center',
+         padding: 8
+
+     },
+     categoriesStyles: {
+      flex: 1,
+      borderRadius: 6,
+      margin: 15,
+      height: 150,
+     },
+    //  textStyle: {
+    //    fontFamily: 
+    //  }
+ })
 
 export default CategoriesItems
