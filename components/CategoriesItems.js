@@ -1,7 +1,7 @@
 import React from "react";
 import { View, TouchableOpacity, Text, StyleSheet} from 'react-native';
 import Colors from "../constants/Colors";
-
+import Typography from "../constants/Typography"
 
 function CategoriesItems({item , onSelected}){ 
 
@@ -47,9 +47,11 @@ function CategoriesItems({item , onSelected}){
       margin: 15,
       height: 150,
      },
-    //  textStyle: {
-    //    fontFamily: 
-    //  }
+      textStyle: {
+        fontFamily: Typography.titleFont,
+        fontSize: 30
+         
+      }
  })
 
 export default CategoriesItems
