@@ -7,11 +7,11 @@ import Typography from "../constants/Typography";
 
 import Test1 from "../screen/Test1";
 import Test2 from "../screen/Test2";
-import Test3 from "../screen/Test3";
 import StockScreen from "../screen/StockScreen";
 import HomePageScreen from '../screen/HomePageScreen';
 import CategoriesScreen from "../screen/CategoriesScreen";
-
+import ItemsByCategoryScreen from "../screen/ItemsByCategoryScreen";
+import DetailsScreen from "../screen/DetailsScreen";
 
 
 const Stack = createNativeStackNavigator();
@@ -38,11 +38,12 @@ function Navigator(){
                 <Stack.Screen name='Stock' component={StockScreen} />
                 <Stack.Screen name='Inventory' component={Test1} />
                 <Stack.Screen name='Orders' component={Test2} />
-               <Stack.Screen name='Detail' component={Test3} 
+               <Stack.Screen name='Items by category' component={ItemsByCategoryScreen} 
                 options={({ route }) => ({
                     title: route.params.name,
                 })} />
                <Stack.Screen name='Categories' component={CategoriesScreen} />
+               <Stack.Screen name='DetailsScreen' component={DetailsScreen} />
             
             </Stack.Navigator>
         </NavigationContainer>

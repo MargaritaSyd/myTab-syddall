@@ -8,7 +8,7 @@ import { NavigationContainer } from "@react-navigation/native";
 function CategoriesScreen({navigation}){
 
     const handlePress = (item) => {
-        navigation.navigate('Detail' , {
+        navigation.navigate('Items by category' , {
             name: item.title,
             categoryID: item.id
         }) 

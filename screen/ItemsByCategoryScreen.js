@@ -2,14 +2,25 @@ import React, { useState } from "react";
 import { StyleSheet, Text, View, FlatList } from 'react-native';
 import Colors from "../constants/Colors";
 import {STOCK} from '../data/stock';
+import DetailItems from "../components/DetailItems";
 
-function Test3({navigation, route}){
+function ItemsByCategoryScreen({navigation, route}){
     const filterStock = STOCK.filter(item => item.category === route.params.categoryID)
+
+    const handlePress = () => {
+        navigation.navigate('DetailsScreen')
+    }
+    const renderItem = ({ item }) => (
+        <DetailItems
+        item = {item}
+        onSelected={handlePress}
+        />
+    )
+    
         return(
             <FlatList 
                 data={filterStock}
-                renderItem={({item}) => (<View><Text>{item.name}</Text></View>)
-                }
+                renderItem={renderItem}
             />
         )
 }
@@ -28,4 +39,4 @@ const styles = StyleSheet.create({
 
 
 
-export default Test3
+export default ItemsByCategoryScreen
