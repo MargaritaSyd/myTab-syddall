@@ -3,12 +3,18 @@ import { StyleSheet, Text, View, FlatList } from 'react-native';
 import { CATEGORIES } from "../data/categories";
 import Colors from "../constants/Colors";
 import CategoriesItems from "../components/CategoriesItems";
+import { NavigationContainer } from "@react-navigation/native";
 
-function CategoriesScreen(){
+function CategoriesScreen({navigation}){
+
+    const handlePress = () => {
+        navigation.navigate('Detail') 
+    }
     
 const renderItem = ({ item }) => (
     <CategoriesItems
     item = {item}
+    onSelected={handlePress}
     />
 )
 
@@ -16,7 +22,7 @@ const renderItem = ({ item }) => (
             <FlatList
                 data = {CATEGORIES}
                 keyExtractor={item => item.id}
-                renderItem={renderItem}
+                renderItem={renderItem }
             />
         )
 }
