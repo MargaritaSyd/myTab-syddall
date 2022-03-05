@@ -12,6 +12,8 @@ import StockScreen from "../screen/StockScreen";
 import HomePageScreen from '../screen/HomePageScreen';
 import CategoriesScreen from "../screen/CategoriesScreen";
 
+
+
 const Stack = createNativeStackNavigator();
 
 function Navigator(){
@@ -36,7 +38,10 @@ function Navigator(){
                 <Stack.Screen name='Stock' component={StockScreen} />
                 <Stack.Screen name='Inventory' component={Test1} />
                 <Stack.Screen name='Orders' component={Test2} />
-               <Stack.Screen name='Detail' component={Test3} />
+               <Stack.Screen name='Detail' component={Test3} 
+                options={({ route }) => ({
+                    title: route.params.name,
+                })} />
                <Stack.Screen name='Categories' component={CategoriesScreen} />
             
             </Stack.Navigator>

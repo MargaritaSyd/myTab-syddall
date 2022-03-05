@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { StyleSheet, Text, View, FlatList } from 'react-native';
+import { FlatList } from 'react-native';
 import { CATEGORIES } from "../data/categories";
 import Colors from "../constants/Colors";
 import CategoriesItems from "../components/CategoriesItems";
@@ -7,8 +7,10 @@ import { NavigationContainer } from "@react-navigation/native";
 
 function CategoriesScreen({navigation}){
 
-    const handlePress = () => {
-        navigation.navigate('Detail') 
+    const handlePress = (item) => {
+        navigation.navigate('Detail' , {
+            name: item.title,
+        }) 
     }
     
 const renderItem = ({ item }) => (
@@ -26,17 +28,6 @@ const renderItem = ({ item }) => (
             />
         )
 }
-
-const styles = StyleSheet.create({
-    containerHome: {
-      padding:30,
-      backgroundColor: Colors.backGround,
-      flex: 1
-    },
-    textHome: {
-        color: Colors.accent
-    }
-})
   
 
 

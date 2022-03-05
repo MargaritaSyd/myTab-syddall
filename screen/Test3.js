@@ -3,7 +3,7 @@ import { StyleSheet, Text, View } from 'react-native';
 import Colors from "../constants/Colors";
 
 
-function Test3(){
+function Test3({navigation, route}){
     
         return(
             <View style={styles.containerHome}>
