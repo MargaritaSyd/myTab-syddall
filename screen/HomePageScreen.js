@@ -36,7 +36,7 @@ function HomePageScreen({navigation}){
                     <Button title="Add to Stock" style={styles.buttonHome} onPress={handleOnHomeToStockScreen}/>
                 </View>
                  */}
-                <View style={styles.buttonConteiner}>
+                <View style={[styles.buttonConteiner , styles.buttonTop]}>
                     <Button title="Tu Stock" style={styles.buttonHome} onPress={handleOnHomeToCategoriesScreen}/>
                 </View>
                 <View style={styles.buttonConteiner}>
@@ -82,6 +82,9 @@ const styles = StyleSheet.create({
         maxWidth: '80%',
         marginTop: 10
 
+    },
+    buttonTop: {
+        marginTop: 20
     }
 })
   

@@ -37,7 +37,7 @@ function DashboardScreen({navigation}){
 
             <View style={isPortrait ? styles.containerHome : styles.containerHomeLandscape}>
                 <Logo/>
-                <View style={styles.buttonConteiner}>
+                <View style={[styles.buttonConteiner,styles.buttonTop]}>
                     <Button title="Agregar a tu Stock" style={styles.buttonHome} onPress={handleOnHomeToStockScreen}/>
                 </View>
                 
@@ -88,6 +88,9 @@ const styles = StyleSheet.create({
         width: 300,
         maxWidth: '80%'
 
+    },
+    buttonTop: {
+        marginTop: 20
     }
 })
   

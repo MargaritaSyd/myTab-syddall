@@ -15,7 +15,17 @@ const styles = StyleSheet.create({
         backgroundColor: Colors.buttonBackGround,
         borderColor: 'white',
         borderWidth: 2,
-        //marginTop: 5,
+        borderRadius: 6,
+        shadowColor: "#000",
+        shadowOffset: {
+            width: 0,
+            height: 2,
+        },
+        shadowOpacity: 0.25,
+        shadowRadius: 3.84,
+
+        elevation: 5,
+        marginTop: 5,
         //marginBottom: 5
     },
     textButton: {
