@@ -1,11 +1,17 @@
 import React, { useState } from "react";
+import { useSelector } from "react-redux"
 import { StyleSheet, FlatList } from 'react-native';
 import Colors from "../constants/Colors";
 import {STOCK} from '../data/stock';
 import DetailItems from "../components/DetailItems";
 
 function ItemsByCategoryScreen({navigation, route}){
-    const filterStock = STOCK.filter(item => item.category === route.params.categoryID)
+    
+    const stock = useSelector(state => state.stock.list);
+    const selectedCategory = useSelector(state => state.categories.selected);
+
+
+    const filterStock = stock.filter(item => item.category === selectedCategory.id)
 
     const handlePress = (item) => {
         navigation.navigate('DetailsScreen' , {
