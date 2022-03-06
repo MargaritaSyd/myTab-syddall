@@ -9,11 +9,11 @@ export const STOCK = [
     },
     {
         id: '2',
-        category: '2',
+        category: '7',
         name: 'Ron Havanna Club',
         measure: 'L',
         stockAmount: 2.5,
-        Price: 550
+        price: 550
     },
     {
         id: '3',

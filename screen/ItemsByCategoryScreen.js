@@ -10,7 +10,7 @@ function ItemsByCategoryScreen({navigation, route}){
     const handlePress = (item) => {
         navigation.navigate('DetailsScreen' , {
             name: item.name,
-
+            itemId: item.id
         })
     }
     const renderItem = ({ item }) => (

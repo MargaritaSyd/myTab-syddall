@@ -48,6 +48,7 @@ function Navigator(){
                 component={DetailsScreen} 
                 options={({ route }) => ({
                     title: route.params.name,
+                    itemId: route.params.id
                 })}
                 />
             
