@@ -1,4 +1,5 @@
 import React from "react";
+import { StyleSheet } from "react-native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import Navigator from "./Navigator";
 import InventoryNavigator from "./InventoryNavigator";
@@ -11,6 +12,7 @@ function TabNavigator (){
             initialRouteName="Main"
             screenOptions={{
                 headerShown: false,
+                tabBarStyle: styles.tabStyle,
             }}
 
         >
@@ -23,5 +25,13 @@ function TabNavigator (){
         </Tab.Navigator>
     )
 }
+
+const styles = StyleSheet.create({
+    tabStyle: {
+        position: 'absolute',
+        height: 60
+
+    }
+})
 
 export default TabNavigator

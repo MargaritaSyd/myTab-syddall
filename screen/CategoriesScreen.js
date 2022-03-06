@@ -1,11 +1,19 @@
 import React, { useState } from "react";
-import { FlatList } from 'react-native';
+import { FlatList, useWindowDimensions } from 'react-native';
 import { CATEGORIES } from "../data/categories";
 import Colors from "../constants/Colors";
 import CategoriesItems from "../components/CategoriesItems";
-import { NavigationContainer } from "@react-navigation/native";
+
+                
 
 function CategoriesScreen({navigation}){
+
+    //const { width, height } = useWindowDimensions();
+
+    //const isPortrait = height  >= width;
+
+    //let columns 
+    //isPortrait ? columns = 2 : columns = 3
 
     const handlePress = (item) => {
         navigation.navigate('Items by category' , {
@@ -26,6 +34,8 @@ const renderItem = ({ item }) => (
                 data = {CATEGORIES}
                 keyExtractor={item => item.id}
                 renderItem={renderItem }
+                numColumns={2} 
+                
             />
         )
 }
