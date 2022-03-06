@@ -14,32 +14,33 @@ function HomePageScreen({navigation}){
 
     const isPortrait = height  >= width;
 
-     const handleOnHomeToStockScreen = () => {
-        navigation.navigate('Stock')
-     }
+    //  const handleOnHomeToStockScreen = () => {
+    //     navigation.navigate('Stock')
+    //  }
 
      
 
      const handleOnHomeToCategoriesScreen = () => {
         navigation.navigate('Categories')
      }
-    // const handleOnHomeToScreen = () => {
-    //     setActionSelected("stockScreen")
-    //     onHandleHomePage(actionSelected);
-   
-    // // alert(actionSelected)
-    // }
+     const handleSearch = () => {
+         navigation.navigate('SearchScreen')
+     }
+    
     
         return(
 
             <View style={isPortrait ? styles.containerHome : styles.containerHomeLandscape}>
                 <Logo/>
-                <View style={styles.buttonConteiner}>
+                {/* <View style={styles.buttonConteiner}>
                     <Button title="Add to Stock" style={styles.buttonHome} onPress={handleOnHomeToStockScreen}/>
                 </View>
-                
+                 */}
                 <View style={styles.buttonConteiner}>
-                    <Button title="Categorias" style={styles.buttonHome} onPress={handleOnHomeToCategoriesScreen}/>
+                    <Button title="Tu Stock" style={styles.buttonHome} onPress={handleOnHomeToCategoriesScreen}/>
+                </View>
+                <View style={styles.buttonConteiner}>
+                    <Button title="Buscar" style={styles.buttonHome} onPress={handleSearch}/>
                 </View>
             </View>
         )
@@ -49,7 +50,8 @@ const styles = StyleSheet.create({
     containerHome: {
       padding:30,
       backgroundColor: Colors.backGround,
-      flex: 1
+      flex: 1,
+      
     },
     containerHomeLandscape: {
         //padding:50,
@@ -77,7 +79,8 @@ const styles = StyleSheet.create({
         marginBottom: 10,
         marginLeft: 15,
         width: 300,
-        maxWidth: '80%'
+        maxWidth: '80%',
+        marginTop: 10
 
     }
 })

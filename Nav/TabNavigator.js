@@ -3,7 +3,7 @@ import { StyleSheet, View, Text } from "react-native";
 import Colors from "../constants/Colors";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import Navigator from "./Navigator";
-import InventoryNavigator from "./InventoryNavigator";
+import DashboardNavigator from "./DashboardNavigator";
 import { Entypo } from '@expo/vector-icons';
 
 const Tab = createBottomTabNavigator();
@@ -31,8 +31,8 @@ function TabNavigator (){
                     
             />
             <Tab.Screen 
-                name="InventoryTab" 
-                component={InventoryNavigator} 
+                name="DashboardNavigator" 
+                component={DashboardNavigator} 
                 options={{
                     tabBarIcon: ({ focused }) => (
                         <View>

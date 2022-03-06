@@ -7,7 +7,7 @@ import Logo from "../components/Header/Logo";
 
 
 //function HomePageScreen({onHandleHomePage}){
-function HomeInventoryScreen({navigation}){
+function DashboardScreen({navigation}){
     
    // const [actionSelected , setActionSelected] = useState('')
     const { width, height } = useWindowDimensions();
@@ -24,16 +24,31 @@ function HomeInventoryScreen({navigation}){
         navigation.navigate('Orders')
      }
 
+
+     const handleOnHomeToStockScreen = () => {
+        navigation.navigate('Stock')
+     }
      
+      const handleSales = () => {
+          navigation.navigate('Sales')
+      }
+
         return(
 
             <View style={isPortrait ? styles.containerHome : styles.containerHomeLandscape}>
                 <Logo/>
                 <View style={styles.buttonConteiner}>
+                    <Button title="Agregar a tu Stock" style={styles.buttonHome} onPress={handleOnHomeToStockScreen}/>
+                </View>
+                
+                <View style={styles.buttonConteiner}>
                     <Button title="Inventario" style={styles.buttonHome} onPress={handleOnHomeToInventoryScreen}/>
                 </View>
                 <View style={styles.buttonConteiner}>
                     <Button title="Pedidos" style={styles.buttonHome} onPress={handleOnHomeToOrdersScreen}/>
+                </View>
+                <View style={styles.buttonConteiner}>
+                    <Button title="Ventas" style={styles.buttonHome} onPress={handleSales} />
                 </View>
             </View>
         )
@@ -79,4 +94,4 @@ const styles = StyleSheet.create({
 
 
 
-export default HomeInventoryScreen
+export default DashboardScreen

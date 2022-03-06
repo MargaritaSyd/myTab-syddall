@@ -3,7 +3,10 @@ import Colors from "../constants/Colors";
 import { StyleSheet } from "react-native";
 import Typography from "../constants/Typography";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import HomeInventoryScreen from "../screen/HomeInventoryScreen";
+//import HomeInventoryScreen from "../screen/HomeInventoryScreen";
+import DashboardScreen from "../screen/DashboarScreen";
+import StockScreen from "../screen/StockScreen";
+import SalesScreen from "../screen/SalesScreen";
 
 import InventoryScreen from "../screen/InventoryScreen";
 import Test2 from "../screen/Test2";
@@ -11,10 +14,10 @@ import Test2 from "../screen/Test2";
 
 const Stack = createNativeStackNavigator();
 
-const InventoryNavigator = () => {
+const DashboardNavigator = () => {
     return (
         <Stack.Navigator 
-            initialRouteName="HomeInventory"
+            initialRouteName="Dashboard"
             screenOptions={{
                 headerStyle: styles.header,
                 headerTitleStyle: styles.headerTitle,
@@ -23,15 +26,24 @@ const InventoryNavigator = () => {
             
         >
             <Stack.Screen 
-                name="HomeInventory" 
-                component={HomeInventoryScreen}
+                name="Dashboard" 
+                component={DashboardScreen}
                 options={{
                     headerTintColor: Colors.primary,
-                    title: "Tu inventario"
+                    //title: "Tu inventario"
                 }}    
             />
             <Stack.Screen name="Inventory" component={InventoryScreen}/>
             <Stack.Screen name='Orders' component={Test2} />
+            <Stack.Screen name='Sales' component={SalesScreen} />
+            <Stack.Screen 
+                    name='Stock' 
+                    component={StockScreen} 
+                    options ={{
+                        // headerTintColor: Colors.primary,
+                         title: 'Agregar a tu stock'
+                     }}
+            />
         </Stack.Navigator>
     )
 }
@@ -45,4 +57,4 @@ const styles = StyleSheet.create({
         fontFamily: Typography.titleFont,
     }
 })
-export default InventoryNavigator
+export default DashboardNavigator

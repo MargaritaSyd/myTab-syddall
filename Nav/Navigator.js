@@ -4,13 +4,11 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Colors from "../constants/Colors";
 import Typography from "../constants/Typography";
 
-import Test1 from "../screen/Test1";
-import Test2 from "../screen/Test2";
-import StockScreen from "../screen/StockScreen";
 import HomePageScreen from '../screen/HomePageScreen';
 import CategoriesScreen from "../screen/CategoriesScreen";
 import ItemsByCategoryScreen from "../screen/ItemsByCategoryScreen";
 import DetailsScreen from "../screen/DetailsScreen";
+import SearchScreen from "../screen/SearchScreen";
 
 
 const Stack = createNativeStackNavigator();
@@ -33,12 +31,12 @@ function Navigator(){
                     }}
 
                 />
-                <Stack.Screen 
-                    name='Stock' 
-                    component={StockScreen} 
+                 <Stack.Screen 
+                    name='SearchScreen' 
+                    component={SearchScreen} 
                     options ={{
                         // headerTintColor: Colors.primary,
-                         title: 'Agregar a tu stock'
+                         title: 'Buscar'
                      }}
                 />
                 <Stack.Screen name='Items by category' component={ItemsByCategoryScreen} 
