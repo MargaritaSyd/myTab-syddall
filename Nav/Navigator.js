@@ -43,7 +43,14 @@ function Navigator(){
                 options={({ route }) => ({
                     title: route.params.name,
                 })} />
-               <Stack.Screen name='Categories' component={CategoriesScreen} />
+               <Stack.Screen 
+                    name='Categories' 
+                    component={CategoriesScreen}
+                    options ={{
+                        // headerTintColor: Colors.primary,
+                         title: 'Tu Stock por categorías'
+                     }}
+                />
                <Stack.Screen 
                 name='DetailsScreen' 
                 component={DetailsScreen} 

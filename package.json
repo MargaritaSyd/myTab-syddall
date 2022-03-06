@@ -22,13 +22,14 @@
     "react-native": "0.64.3",
     "react-native-safe-area-context": "3.3.2",
     "react-native-screens": "~3.10.1",
-    "react-native-web": "0.17.1"
+    "react-native-web": "0.17.1",
+    "react-redux": "^7.2.6",
+    "redux": "^4.1.2"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9"
   },
   "private": true,
-  "description": "",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/MargaritaSyd/stella.git"
@@ -38,5 +39,6 @@
   "bugs": {
     "url": "https://github.com/MargaritaSyd/stella/issues"
   },
-  "homepage": "https://github.com/MargaritaSyd/stella#readme"
+  "homepage": "https://github.com/MargaritaSyd/stella#readme",
+  "description": ""
 }

@@ -36,7 +36,7 @@ function TabNavigator (){
                 options={{
                     tabBarIcon: ({ focused }) => (
                         <View>
-                            <Entypo name="archive" size={24} color={focused ? Colors.buttonBackGround : Colors.backGround} />
+                            <Entypo name="list" size={24} color={focused ? Colors.buttonBackGround : Colors.backGround} />
                         </View>
                     )
                 }}

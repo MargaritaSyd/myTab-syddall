@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { FlatList, useWindowDimensions } from 'react-native';
+import { useSelector } from "react-redux"
 import { CATEGORIES } from "../data/categories";
 import Colors from "../constants/Colors";
 import CategoriesItems from "../components/CategoriesItems";
@@ -8,6 +9,7 @@ import CategoriesItems from "../components/CategoriesItems";
 
 function CategoriesScreen({navigation}){
 
+    const categories = useSelector(state => state.categories.list)
     //const { width, height } = useWindowDimensions();
 
     //const isPortrait = height  >= width;
@@ -31,7 +33,7 @@ const renderItem = ({ item }) => (
 
         return(
             <FlatList
-                data = {CATEGORIES}
+                data = {categories}
                 keyExtractor={item => item.id}
                 renderItem={renderItem }
                 numColumns={2} 

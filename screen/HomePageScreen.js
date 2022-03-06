@@ -32,10 +32,7 @@ function HomePageScreen({navigation}){
 
             <View style={isPortrait ? styles.containerHome : styles.containerHomeLandscape}>
                 <Logo/>
-                {/* <View style={styles.buttonConteiner}>
-                    <Button title="Add to Stock" style={styles.buttonHome} onPress={handleOnHomeToStockScreen}/>
-                </View>
-                 */}
+                
                 <View style={[styles.buttonConteiner , styles.buttonTop]}>
                     <Button title="Tu Stock" style={styles.buttonHome} onPress={handleOnHomeToCategoriesScreen}/>
                 </View>

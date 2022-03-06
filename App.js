@@ -1,9 +1,11 @@
 
 import React from "react";
-import Navigator from "./Nav/Navigator";
+import { Provider } from "react-redux";
 import {useFonts} from 'expo-font';
 import AppLoading from "expo-app-loading";
 import MainNavigator from "./Nav";
+
+import store from "./store";
 
 export default function App() {
 
@@ -17,6 +19,8 @@ export default function App() {
   
    
   return(
-    <MainNavigator />
+    <Provider store={store}>
+      <MainNavigator />
+    </Provider>
   )
 }
