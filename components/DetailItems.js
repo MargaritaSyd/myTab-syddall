@@ -15,7 +15,7 @@ function DetailItems({item , onSelected}){
                     <Text style={styles.textStyleTitle}> {item.name}</Text>
                     <Text style={styles.textStyle}> Unidad: {item.measure}</Text>
                     <Text style={styles.textStyle}> Stock: {item.stockAmount}</Text>
-                    <Text style={styles.textStyle}> Precio: {item.price}</Text>
+                    <Text style={styles.textStyle}> Precio: ${item.price}</Text>
                 </View>
             </TouchableOpacity>
         </View>
@@ -47,13 +47,16 @@ function DetailItems({item , onSelected}){
      },
       textStyleTitle: {
         fontFamily: Typography.titleFont,
-        fontSize: 20
+        fontSize: 20,
+        color: Colors.buttonBackGround,
+        fontWeight: 'bold'
          
       },
       textStyle: {
         fontFamily: Typography.titleFont,
-        fontSize: 15
-         
+        fontSize: 15,
+        color: Colors.buttonBackGround,
+        fontWeight: 'bold'
       },
       detailStylesConteiner: {
         

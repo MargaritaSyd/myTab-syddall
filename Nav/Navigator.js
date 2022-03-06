@@ -43,7 +43,13 @@ function Navigator(){
                     title: route.params.name,
                 })} />
                <Stack.Screen name='Categories' component={CategoriesScreen} />
-               <Stack.Screen name='DetailsScreen' component={DetailsScreen} />
+               <Stack.Screen 
+                name='DetailsScreen' 
+                component={DetailsScreen} 
+                options={({ route }) => ({
+                    title: route.params.name,
+                })}
+                />
             
             </Stack.Navigator>
         </NavigationContainer>

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { StyleSheet, Text, View, FlatList } from 'react-native';
+import { StyleSheet, FlatList } from 'react-native';
 import Colors from "../constants/Colors";
 import {STOCK} from '../data/stock';
 import DetailItems from "../components/DetailItems";
@@ -7,8 +7,11 @@ import DetailItems from "../components/DetailItems";
 function ItemsByCategoryScreen({navigation, route}){
     const filterStock = STOCK.filter(item => item.category === route.params.categoryID)
 
-    const handlePress = () => {
-        navigation.navigate('DetailsScreen')
+    const handlePress = (item) => {
+        navigation.navigate('DetailsScreen' , {
+            name: item.name,
+
+        })
     }
     const renderItem = ({ item }) => (
         <DetailItems
