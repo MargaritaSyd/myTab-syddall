@@ -59,7 +59,7 @@ function StockScreen(){
     return (
       <View style={styles.container}>
         <View>
-          <Text style={styles.title}> Tu Stock </Text>
+          <Text style={styles.title}> . </Text>
         </View>
         < ItemList 
        itemList = {itemList}

@@ -1,6 +1,5 @@
 import React from "react";
 import { Platform, StyleSheet } from "react-native";
-import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Colors from "../constants/Colors";
 import Typography from "../constants/Typography";
@@ -18,7 +17,6 @@ const Stack = createNativeStackNavigator();
 
 function Navigator(){
     return (
-        <NavigationContainer>
             <Stack.Navigator initialRouteName="Home"
             screenOptions={{
                 headerStyle: styles.header,
@@ -53,7 +51,6 @@ function Navigator(){
                 />
             
             </Stack.Navigator>
-        </NavigationContainer>
     )
 }
 

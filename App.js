@@ -3,7 +3,7 @@ import React from "react";
 import Navigator from "./Nav/Navigator";
 import {useFonts} from 'expo-font';
 import AppLoading from "expo-app-loading";
-
+import MainNavigator from "./Nav";
 
 export default function App() {
 
@@ -17,6 +17,6 @@ export default function App() {
   
    
   return(
-    <Navigator />
+    <MainNavigator />
   )
 }
