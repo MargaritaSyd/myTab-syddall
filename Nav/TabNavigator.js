@@ -1,8 +1,10 @@
 import React from "react";
-import { StyleSheet } from "react-native";
+import { StyleSheet, View, Text } from "react-native";
+import Colors from "../constants/Colors";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import Navigator from "./Navigator";
 import InventoryNavigator from "./InventoryNavigator";
+import { Entypo } from '@expo/vector-icons';
 
 const Tab = createBottomTabNavigator();
 
@@ -19,9 +21,26 @@ function TabNavigator (){
             <Tab.Screen 
                 name="Main" 
                 component={Navigator}
+                options={{
+                    tabBarIcon: ({ focused }) => (
+                        <View>
+                            <Entypo name="drink" size={24} color={focused ? Colors.buttonBackGround : Colors.backGround} />
+                        </View>
+                    )
+                }}
                     
             />
-            <Tab.Screen name="Inventory" component={InventoryNavigator} />
+            <Tab.Screen 
+                name="InventoryTab" 
+                component={InventoryNavigator} 
+                options={{
+                    tabBarIcon: ({ focused }) => (
+                        <View>
+                            <Entypo name="archive" size={24} color={focused ? Colors.buttonBackGround : Colors.backGround} />
+                        </View>
+                    )
+                }}
+            />
         </Tab.Navigator>
     )
 }

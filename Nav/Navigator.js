@@ -28,15 +28,13 @@ function Navigator(){
                     name='Home' 
                     component={HomePageScreen} 
                     options ={{
-                        headerTintColor: Colors.primary,
+                       // headerTintColor: Colors.primary,
                         title: 'Inicio'
                     }}
 
                 />
                 <Stack.Screen name='Stock' component={StockScreen} />
-                <Stack.Screen name='Inventory' component={Test1} />
-                <Stack.Screen name='Orders' component={Test2} />
-               <Stack.Screen name='Items by category' component={ItemsByCategoryScreen} 
+                <Stack.Screen name='Items by category' component={ItemsByCategoryScreen} 
                 options={({ route }) => ({
                     title: route.params.name,
                 })} />
