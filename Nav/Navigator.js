@@ -33,7 +33,14 @@ function Navigator(){
                     }}
 
                 />
-                <Stack.Screen name='Stock' component={StockScreen} />
+                <Stack.Screen 
+                    name='Stock' 
+                    component={StockScreen} 
+                    options ={{
+                        // headerTintColor: Colors.primary,
+                         title: 'Agregar a tu stock'
+                     }}
+                />
                 <Stack.Screen name='Items by category' component={ItemsByCategoryScreen} 
                 options={({ route }) => ({
                     title: route.params.name,

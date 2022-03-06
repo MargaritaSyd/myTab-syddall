@@ -8,7 +8,7 @@ import Colors from '../constants/Colors.js';
 import Typography from '../constants/Typography.js';
 
 
-function StockScreen(){
+function StockScreen(navigation){
     const [textInput , setTextInput] = useState('');
     const [stockInput , setStockInput] = useState('');
     
@@ -56,23 +56,9 @@ function StockScreen(){
    // console.log(textInput)
   // console.log(itemList)
   
+  
     return (
       <View style={styles.container}>
-        <View>
-          <Text style={styles.title}> . </Text>
-        </View>
-        < ItemList 
-       itemList = {itemList}
-       handleOnDelete = {handleOnDelete}
-       handleDetail = {handleDetail}
-       />
-           {confirmedDeteail ? <Text> OK</Text> : null}
-         
-         < ModalDelete
-        modalVisible = {modalVisible}
-        itemSelected = {itemSelected}
-        handleConfirmDelete = {handleConfirmDelete}
-        />
         <View style={styles.addItemConteiner}>
           <View>
             <Text style={styles.title}>Agregá un nuevo item a tu stock</Text>
@@ -85,6 +71,20 @@ function StockScreen(){
             handleOnPress={handleOnPress}
           />
         </View>  
+        
+        < ItemList 
+       itemList = {itemList}
+       handleOnDelete = {handleOnDelete}
+       handleDetail = {handleDetail}
+       />
+           {confirmedDeteail ? <Text> OK</Text> : null}
+         
+         < ModalDelete
+        modalVisible = {modalVisible}
+        itemSelected = {itemSelected}
+        handleConfirmDelete = {handleConfirmDelete}
+        />
+
        
       
         <StatusBar style="auto" />
