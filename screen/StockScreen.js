@@ -60,7 +60,7 @@ function StockScreen(navigation){
       setModalVisible(true)
       setItemSelected(item)
     }
-    const handleDetail = (item) => {
+    const handleAddToStock = (item) => {
       alert('ok')
      // setActionSelected("itemDetail")
      // setItemSelected(item)
@@ -100,7 +100,7 @@ function StockScreen(navigation){
         < ItemList 
        itemList = {itemList}
        handleOnDelete = {handleOnDelete}
-       handleDetail = {handleDetail}
+       handleAddToStock = {handleAddToStock}
        />
            {confirmedDeteail ? <Text> OK</Text> : null}
          

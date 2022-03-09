@@ -14,6 +14,11 @@ const styles = StyleSheet.create({
     textList: {
       color: "#a2532a"
       },
+    buttonsStyles: {
+      flexDirection: 'row',
+      justifyContent: 'space-between',
+        
+    }
 })
 
 export default styles
