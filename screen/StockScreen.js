@@ -1,14 +1,19 @@
 import { useState} from 'react';
 import { StatusBar } from 'expo-status-bar';
+import { useDispatch } from 'react-redux';
 import { StyleSheet, Text, View, Dimensions} from 'react-native';
 import AddItem from '../components/AddItems/AddItem.js';
 import ModalDelete from '../components/Modal.js';
 import ItemList from '../components/ItemList/ItemList.js';
 import Colors from '../constants/Colors.js';
 import Typography from '../constants/Typography.js';
-
+import { STOCK } from '../data/stock.js';
+import { confirmAddItem } from "../store/actions/addItem.actions"
 
 function StockScreen(navigation){
+
+  const dispatch = useDispatch()
+
     const [textInput , setTextInput] = useState('');
     const [stockInput , setStockInput] = useState('');
     const [measureInput , setMeasureInput] = useState('');
@@ -27,7 +32,7 @@ function StockScreen(navigation){
     }
 
     const handleChangeStock = (text) => {
-      setStockInput(text.replace(/[ˆ0-9]/g, ''))
+      setStockInput(text.replace(/[^0-9]/g, ''))
     }
     const handleChangeMeasure = (text) => {
       setMeasureInput(text)
@@ -60,8 +65,9 @@ function StockScreen(navigation){
       setModalVisible(true)
       setItemSelected(item)
     }
-    const handleAddToStock = (item) => {
-      alert('ok')
+    const handleAddToStock = () => {
+      dispatch(confirmAddItem(STOCK))
+     // alert('ok')
      // setActionSelected("itemDetail")
      // setItemSelected(item)
      // onHandleStockScreen(actionSelected)
