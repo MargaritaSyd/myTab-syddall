@@ -6,8 +6,8 @@ const styles = StyleSheet.create({
         marginVertical: 20,
         borderColor: '#a2532a',
         borderWidth: 1,
-        flexDirection: 'row',
-        alignItems: 'center',
+        //flexDirection: 'row',
+       // alignItems: 'center',
         justifyContent: 'space-between',
         color: "#a2532a"
       },

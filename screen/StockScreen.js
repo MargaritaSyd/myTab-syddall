@@ -11,7 +11,10 @@ import Typography from '../constants/Typography.js';
 function StockScreen(navigation){
     const [textInput , setTextInput] = useState('');
     const [stockInput , setStockInput] = useState('');
-    
+    const [measureInput , setMeasureInput] = useState('');
+    const [categoryInput, setCategoryInput] = useState('');
+    const [priceInput, setPriceInput] = useState('');
+
     const [itemList , setItemList] = useState([]);
     const [itemSelected , setItemSelected] = useState({});
     const [modalVisible , setModalVisible] = useState(false);
@@ -22,16 +25,32 @@ function StockScreen(navigation){
     const handleChangeText = (text) => {
       setTextInput(text)
     }
+
     const handleChangeStock = (text) => {
       setStockInput(text.replace(/[ˆ0-9]/g, ''))
+    }
+    const handleChangeMeasure = (text) => {
+      setMeasureInput(text)
+    }
+    const handleChangeCategory = (text) => {
+      setCategoryInput(text)
+    }
+    const handleChangePrice = (text) => {
+      setPriceInput(text)
     }
     const handleOnPress = () => {
       setTextInput('')
       setStockInput('')
+      setMeasureInput('')
+      setCategoryInput('')
+      setPriceInput('')
       setItemList([
         ...itemList, {
           value: textInput,
           stock: stockInput,
+          measure: measureInput,
+          price: priceInput,
+          category: categoryInput,
           id: Math.random().toString(),
         },
       ])
@@ -66,8 +85,14 @@ function StockScreen(navigation){
           <AddItem
             textInput={textInput}
             stockInput={stockInput}
+            measureInput={measureInput} 
+            categoryInput = {categoryInput}
+            priceInput = {priceInput}
             handleChangeText={handleChangeText}
             handleChangeStock={handleChangeStock}
+            handleChangeMeasure={handleChangeMeasure}
+            handleChangePrice = {handleChangePrice}
+            handleChangeCategory = {handleChangeCategory}
             handleOnPress={handleOnPress}
           />
         </View>  

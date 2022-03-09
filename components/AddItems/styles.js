@@ -13,7 +13,7 @@ const styles = StyleSheet.create({
         
       },
       inputContainer: {
-      flexDirection: "row",
+      //flexDirection: "row",
       backgroundColor: "#dbec66",
       justifyContent: 'space-between'
      
