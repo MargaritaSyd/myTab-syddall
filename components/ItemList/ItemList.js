@@ -9,11 +9,13 @@ function ItemList({itemList , handleOnDelete , handleAddToStock}){
         data={itemList}
         renderItem={({item}) => (
           <View  style={styles.item}>
-            <Text style={styles.textList}> {item.value} </Text>
-            <Text style={styles.textList}> {item.stock} </Text>
-            <Text style={styles.textList}> {item.measure} </Text>
-            <Text style={styles.textList}> {item.category} </Text>
-            <Text style={styles.textList}> {item.price} </Text>
+            <Text style={styles.textList}> Producto: {item.value} </Text>
+            <View style={styles.stockMeasure}>
+              <Text style={styles.textList}> Stock: {item.stock} </Text>
+              <Text style={styles.textList}> {item.measure} </Text>
+            </View>
+            <Text style={styles.textList}> Categoría: {item.category} </Text>
+            <Text style={styles.textList}> Precio: ${item.price} </Text>
             <View style={styles.buttonsStyles}>
               <Button 
                 onPress={() => handleAddToStock(item)}
