@@ -19,6 +19,9 @@ const styles = StyleSheet.create({
      
 
       },
+      radioButton: {
+        flexDirection: "row"
+      }
 })
 
 export default styles

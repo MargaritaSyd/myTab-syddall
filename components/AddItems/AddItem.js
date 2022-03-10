@@ -3,8 +3,25 @@ import { View, TouchableWithoutFeedback, Keyboard , KeyboardAvoidingView} from '
 import styles from "./styles";
 import Button from "../Button";
 import Input from '../Input';
+import RadioButtons from "../RadioButtons";
+import {CATEGORIES} from "../../data/categories" 
 
-function AddItem({textInput, stockInput, priceInput, measureInput, categoryInput, handleChangeText, handleChangeStock, handleChangeMeasure, handleChangePrice, handleChangeCategory, handleOnPress}){ 
+const options = [
+  {
+    id: '1',
+    title: 'Sin Alcohol',
+    color: '#F0F0C9'
+},
+{
+    id: '2',
+    title: 'Vino',
+    color: '#F2BB05',
+},
+
+]
+
+
+function AddItem({textInput, stockInput, priceInput, measureInput, categoryInput, handleChangeText, handleChangeStock, handleChangeMeasure, handleMeasure, handleChangePrice, handleChangeCategory, handleOnPress}){ 
 
     return(
       <KeyboardAvoidingView
@@ -26,12 +43,14 @@ function AddItem({textInput, stockInput, priceInput, measureInput, categoryInput
             maxLength={4}
           />
           <Input 
+            accessibilityRole = "radio"
             placeholder='medida'
             onChangeText={handleChangeMeasure}
             value={measureInput}
             maxLength={4}
           />
           <Input 
+            accessibilityRole = "radio"
             placeholder='categoría'
             onChangeText={handleChangeCategory}
             value={categoryInput}
@@ -43,7 +62,16 @@ function AddItem({textInput, stockInput, priceInput, measureInput, categoryInput
             value={priceInput}
            // maxLength={4}
           />
-          
+          <View style={styles.radioButton}>
+            <RadioButtons 
+              onPress={handleMeasure}
+              title="Unidades"
+              />
+            <RadioButtons 
+              onPress={handleMeasure}
+              title="Litros"
+            />
+          </View>  
           <Button  
             onPress={handleOnPress}
             title="Add item"
