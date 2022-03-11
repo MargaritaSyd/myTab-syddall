@@ -1,5 +1,5 @@
 import React from "react";
-import { View, TouchableWithoutFeedback, Keyboard , KeyboardAvoidingView} from 'react-native';
+import { View, Text, TouchableWithoutFeedback, Keyboard , KeyboardAvoidingView} from 'react-native';
 import styles from "./styles";
 import Button from "../Button";
 import Input from '../Input';
@@ -21,7 +21,7 @@ const options = [
 ]
 
 
-function AddItem({textInput, stockInput, priceInput, measureInput, categoryInput, handleChangeText, handleChangeStock, handleChangeMeasure, handleMeasure, handleChangePrice, handleChangeCategory, handleOnPress}){ 
+function AddItem({textInput, stockInput, priceInput, handleChangeText, handleChangeStock, handleCategorySA, handleCategoryV, handleCategoryC, handleCategoryW, handleCategoryD, handleCategoryA, handleCategoryR, handleCategoryVK, handleCategoryT, handleCategoryS, handleMeasureU, handleMeasureL, handleChangePrice, handleOnPress}){ 
 
     return(
       <KeyboardAvoidingView
@@ -36,39 +36,77 @@ function AddItem({textInput, stockInput, priceInput, measureInput, categoryInput
             onChangeText={handleChangeText}
             value={textInput}
           />
+          <View>
+            <Text>Categoría:</Text>
+          </View>
+          <View style={styles.radioButton}>
+            <RadioButtons 
+              onPress={handleCategorySA}
+              title="S/A"
+              />
+            <RadioButtons 
+              onPress={handleCategoryV}
+              title="Vino"
+              />
+            <RadioButtons 
+              onPress={handleCategoryC}
+              title="Cerveza"
+              />
+            <RadioButtons 
+              onPress={handleCategoryW}
+              title="Whiskey"
+              />
+            <RadioButtons 
+              onPress={handleCategoryD}
+              title="Digestivo"
+              />
+          </View>
+          <View style={styles.radioButton}>
+          
+            <RadioButtons 
+              onPress={handleCategoryA}
+              title="Aperitivo"
+              />
+            <RadioButtons 
+              onPress={handleCategoryR}
+              title="Ron"
+              />
+            <RadioButtons 
+              onPress={handleCategoryVK}
+              title="Vodka"
+              />
+            <RadioButtons 
+              onPress={handleCategoryT}
+              title="Tequila"
+              />
+            <RadioButtons 
+              onPress={handleCategoryS}
+              title="Sake"
+              />
+          </View>
           <Input 
             placeholder='stock'
             onChangeText={handleChangeStock}
             value={stockInput}
             maxLength={4}
           />
+          
           <Input 
-            accessibilityRole = "radio"
-            placeholder='medida'
-            onChangeText={handleChangeMeasure}
-            value={measureInput}
-            maxLength={4}
-          />
-          <Input 
-            accessibilityRole = "radio"
-            placeholder='categoría'
-            onChangeText={handleChangeCategory}
-            value={categoryInput}
-           // maxLength={4}
-          />
-          <Input 
-            placeholder='precio'
+            placeholder='precio por medida'
             onChangeText={handleChangePrice}
             value={priceInput}
            // maxLength={4}
           />
+          <View>
+            <Text>Unidad de medida:</Text>
+          </View>
           <View style={styles.radioButton}>
             <RadioButtons 
-              onPress={handleMeasure}
+              onPress={handleMeasureU}
               title="Unidades"
               />
             <RadioButtons 
-              onPress={handleMeasure}
+              onPress={handleMeasureL}
               title="Litros"
             />
           </View>  

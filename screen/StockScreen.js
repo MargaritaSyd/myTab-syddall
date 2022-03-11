@@ -16,9 +16,11 @@ function StockScreen(navigation){
 
     const [textInput , setTextInput] = useState('');
     const [stockInput , setStockInput] = useState('');
-    const [measureInput , setMeasureInput] = useState('');
-    const [categoryInput, setCategoryInput] = useState('');
+    //const [measureInput , setMeasureInput] = useState('');
+    //const [categoryInput, setCategoryInput] = useState('');
+    const [category, setCategory] = useState('');
     const [priceInput, setPriceInput] = useState('');
+    const [measure , setMeasure] = useState('')
 
     const [itemList , setItemList] = useState([]);
     const [itemSelected , setItemSelected] = useState({});
@@ -34,28 +36,73 @@ function StockScreen(navigation){
     const handleChangeStock = (text) => {
       setStockInput(text.replace(/[^0-9]/g, ''))
     }
-    const handleChangeMeasure = (text) => {
-      setMeasureInput(text)
+    // const handleChangeMeasure = (text) => {
+    //   setMeasureInput(text)
+    // }
+    const handleCategorySA = () => {
+      setCategory('S/A')
+      console.log(category)
     }
-    const handleChangeCategory = (text) => {
-      setCategoryInput(text)
+    const handleCategoryV = () => {
+      setCategory('Vino')
+      console.log(category)
+    }
+    const handleCategoryC = () => {
+      setCategory('Cerveza')
+      console.log(category)
+    }
+    const handleCategoryW = () => {
+      setCategory('Whiskey')
+      console.log(category)
+    }
+    const handleCategoryD = () => {
+      setCategory('Digestivo')
+      console.log(category)
+    }
+    const handleCategoryA = () => {
+      setCategory('Aperitivo')
+      console.log(category)
+    }
+    const handleCategoryR = () => {
+      setCategory('Ron')
+      console.log(category)
+    }
+    const handleCategoryVK = () => {
+      setCategory('Vodka')
+      console.log(category)
+    }
+    const handleCategoryT = () => {
+      setCategory('Tequila')
+      console.log(category)
+    }
+    const handleCategoryS = () => {
+      setCategory('Sake')
+      console.log(category)
     }
     const handleChangePrice = (text) => {
       setPriceInput(text)
     }
+    const handleMeasureU = (text) => {
+      setMeasure("U")
+
+    }
+    const handleMeasureL = (text) => {
+      setMeasure("L")
+
+    }
     const handleOnPress = () => {
       setTextInput('')
       setStockInput('')
-      setMeasureInput('')
-      setCategoryInput('')
+      setMeasure('')
+      setCategory('')
       setPriceInput('')
       setItemList([
         ...itemList, {
           value: textInput,
           stock: stockInput,
-          measure: measureInput,
+          measure: measure,
           price: priceInput,
-          category: categoryInput,
+          category: category,
           id: Math.random().toString(),
         },
       ])
@@ -91,14 +138,22 @@ function StockScreen(navigation){
           <AddItem
             textInput={textInput}
             stockInput={stockInput}
-            measureInput={measureInput} 
-            categoryInput = {categoryInput}
             priceInput = {priceInput}
             handleChangeText={handleChangeText}
             handleChangeStock={handleChangeStock}
-            handleChangeMeasure={handleChangeMeasure}
             handleChangePrice = {handleChangePrice}
-            handleChangeCategory = {handleChangeCategory}
+            handleCategorySA = {handleCategorySA}
+            handleCategoryV = {handleCategoryV}
+            handleCategoryC = {handleCategoryC}
+            handleCategoryW = {handleCategoryW}
+            handleCategoryD = {handleCategoryD}
+            handleCategoryA = {handleCategoryA}
+            handleCategoryR = {handleCategoryR} 
+            handleCategoryVK = {handleCategoryVK}
+            handleCategoryT = {handleCategoryT}
+            handleCategoryS = {handleCategoryS}
+            handleMeasureU = {handleMeasureU}
+            handleMeasureL = {handleMeasureL}
             handleOnPress={handleOnPress}
           />
         </View>  
