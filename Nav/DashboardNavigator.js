@@ -9,6 +9,7 @@ import StockScreen from "../screen/StockScreen";
 import SalesScreen from "../screen/SalesScreen";
 
 import InventoryScreen from "../screen/InventoryScreen";
+import NewInventory from "../screen/NewInventory";
 import Test2 from "../screen/Test2";
 import Test1 from "../screen/Test1";
 
@@ -45,7 +46,7 @@ const DashboardNavigator = () => {
                          title: 'Agregar a tu stock'
                      }}
             />
-            <Stack.Screen name='NewInventory' component={Test2} />
+            <Stack.Screen name='NewInventory' component={NewInventory} />
             <Stack.Screen name='InventoryRegister' component={Test1} />
         </Stack.Navigator>
     )

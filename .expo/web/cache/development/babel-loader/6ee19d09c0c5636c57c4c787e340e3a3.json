@@ -1,0 +1,1 @@
+{"ast":null,"code":"export default {\n  titleFont: 'Hubballi-Regular'\n};","map":{"version":3,"sources":["/Users/maggie/Documents/myTab/constants/Typography.js"],"names":["titleFont"],"mappings":"AAAA,eAAc;AACVA,EAAAA,SAAS,EAAE;AADD,CAAd","sourcesContent":["export default{\n    titleFont: 'Hubballi-Regular'\n}"]},"metadata":{},"sourceType":"module"}

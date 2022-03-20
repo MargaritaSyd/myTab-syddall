@@ -48,7 +48,7 @@ function TabNavigator (){
 const styles = StyleSheet.create({
     tabStyle: {
         position: 'absolute',
-        height: 60
+     //   height:60
 
     }
 })
