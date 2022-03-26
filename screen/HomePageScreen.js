@@ -26,6 +26,9 @@ function HomePageScreen({navigation}){
      const handleSearch = () => {
          navigation.navigate('SearchScreen')
      }
+     const handleMyPub = () => {
+        navigation.navigate('MyPub')
+    }
     
     
         return(
@@ -38,6 +41,9 @@ function HomePageScreen({navigation}){
                 </View>
                 <View style={styles.buttonConteiner}>
                     <Button title="Buscar" style={styles.buttonHome} onPress={handleSearch}/>
+                </View>
+                <View style={styles.buttonConteiner}>
+                    <Button title="Tu Bar" style={styles.buttonHome} onPress={handleMyPub}/>
                 </View>
             </View>
         )

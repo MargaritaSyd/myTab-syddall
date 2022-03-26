@@ -9,6 +9,9 @@ import CategoriesScreen from "../screen/CategoriesScreen";
 import ItemsByCategoryScreen from "../screen/ItemsByCategoryScreen";
 import DetailsScreen from "../screen/DetailsScreen";
 import SearchScreen from "../screen/SearchScreen";
+import MyPub from "../screen/MyPub";
+import Test1 from "../screen/Test1";
+
 
 
 const Stack = createNativeStackNavigator();
@@ -39,10 +42,13 @@ function Navigator(){
                          title: 'Buscar'
                      }}
                 />
-                <Stack.Screen name='Items by category' component={ItemsByCategoryScreen} 
-                options={({ route }) => ({
+                <Stack.Screen 
+                    name='Items by category' 
+                    component={ItemsByCategoryScreen} 
+                    options={({ route }) => ({
                     title: route.params.name,
-                })} />
+                })} 
+                />
                <Stack.Screen 
                     name='Categories' 
                     component={CategoriesScreen}
@@ -58,6 +64,29 @@ function Navigator(){
                     title: route.params.name,
                     itemId: route.params.id
                 })}
+                />
+                <Stack.Screen 
+                    name='MyPub' 
+                    component={MyPub}
+                    options ={{
+
+                         title: 'Tu Bar'
+                     }}
+                />
+                <Stack.Screen 
+                    name='Recipies' 
+                    component={Test1}
+                    options ={{
+
+                         title: 'Mis recetas'
+                     }}
+                />
+                <Stack.Screen
+                    name='MyPubDetail'
+                    component={Test1}
+                    options={{
+                        title: "Detalle de mi bar"
+                    }}
                 />
             
             </Stack.Navigator>

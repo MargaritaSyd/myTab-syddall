@@ -1,17 +1,20 @@
 import React from "react";
 import Colors from "../constants/Colors";
-import { StyleSheet } from "react-native";
+import { StyleSheet, TouchableOpacity, Text } from "react-native";
 import Typography from "../constants/Typography";
+
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 //import HomeInventoryScreen from "../screen/HomeInventoryScreen";
 import DashboardScreen from "../screen/DashboarScreen";
 import StockScreen from "../screen/StockScreen";
 import SalesScreen from "../screen/SalesScreen";
+import Test2 from "../screen/Test2";
+import Test1 from "../screen/Test1";
+
 
 import InventoryScreen from "../screen/InventoryScreen";
 import NewInventory from "../screen/NewInventory";
-import Test2 from "../screen/Test2";
-import Test1 from "../screen/Test1";
+
 
 
 const Stack = createNativeStackNavigator();
@@ -27,6 +30,9 @@ const DashboardNavigator = () => {
             }}
             
         >
+
+
+          
             <Stack.Screen 
                 name="Dashboard" 
                 component={DashboardScreen}
