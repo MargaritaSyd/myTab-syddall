@@ -26,8 +26,8 @@ function HomePageScreen({navigation}){
      const handleSearch = () => {
          navigation.navigate('SearchScreen')
      }
-     const handleMyPub = () => {
-        navigation.navigate('MyPub')
+     const handleMyPubDetail = () => {
+        navigation.navigate('MyPubDetail')
     }
     const handleRecepies = () => {
         navigation.navigate('Recipies')
@@ -46,7 +46,7 @@ function HomePageScreen({navigation}){
                     <Button title="Buscar" style={styles.buttonHome} onPress={handleSearch}/>
                 </View>
                 <View style={styles.buttonConteiner}>
-                    <Button title="Mi Bar" style={styles.buttonHome} onPress={handleMyPub}/>
+                    <Button title="Mi Bar" style={styles.buttonHome} onPress={handleMyPubDetail}/>
                 </View>
                 <View style={styles.buttonConteiner}>
                     <Button title="Mis recetas" style={styles.buttonHome} onPress={handleRecepies}/>

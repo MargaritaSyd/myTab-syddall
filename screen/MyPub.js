@@ -25,8 +25,8 @@ function MyPub({navigation}){
         return(
             <ScrollView>
                 <View style={styles.containerHome}>
-                    <Text> Titulo</Text>
-                    <Input>
+                    <Text style={styles.textStyle}> Titulo: </Text>
+                    <Input style={styles.textStyle}>
                         value={title}
                         onChangeText={setTitle}
                     </Input>
@@ -46,6 +46,11 @@ const styles = StyleSheet.create({
       backgroundColor: Colors.backGround,
       flex: 1
     },
+    textStyle: {
+        fontFamily: Typography.titleFont,
+        fontSize: 24,
+        color: Colors.primary
+    }
     
     
 })

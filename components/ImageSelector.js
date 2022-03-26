@@ -42,7 +42,7 @@ function ImageSelector({onImageSelected}){
         })
 
 
-        console.log(image)
+        //console.log(image)
         setPickedUri(image.uri)
         onImageSelected(image.uri)
     }

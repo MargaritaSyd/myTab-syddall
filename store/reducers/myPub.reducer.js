@@ -1,7 +1,6 @@
 
 import { ADD_MY_PUB } from "../actions/myPub.action"
 import MyPubModel from "../../Models/MyPubModel"
-import MyPub from "../../screen/MyPub"
 
 const initialState= {
     myPub: []

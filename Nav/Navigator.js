@@ -11,6 +11,7 @@ import DetailsScreen from "../screen/DetailsScreen";
 import SearchScreen from "../screen/SearchScreen";
 import MyPub from "../screen/MyPub";
 import Test1 from "../screen/Test1";
+import MyPubDetailScreen from "../screen/MyPubDetailScreen";
 
 
 
@@ -74,6 +75,14 @@ function Navigator(){
                          title: 'Tu Bar'
                      }}
                 />
+                 <Stack.Screen 
+                    name='MyPubDetail' 
+                    component={MyPubDetailScreen}
+                    options ={{
+
+                         title: 'Tu Bar'
+                     }}
+                />
                 <Stack.Screen 
                     name='Recipies' 
                     component={Test1}
@@ -82,13 +91,13 @@ function Navigator(){
                          title: 'Mis recetas'
                      }}
                 />
-                <Stack.Screen
-                    name='MyPubDetail'
+                /* <Stack.Screen
+                    name='OnePubDetail'
                     component={Test1}
                     options={{
                         title: "Detalle de mi bar"
                     }}
-                />
+                /> */
             
             </Stack.Navigator>
     )
