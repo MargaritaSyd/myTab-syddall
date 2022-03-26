@@ -7,7 +7,7 @@ import Typography from "../constants/Typography";
 import Button from "../components/Button";
 import Input from "../components/Input";
 import { addMyPub } from "../store/actions/myPub.action";
-
+import ImageSelector from "../components/ImageSelector";
 
 
 
@@ -27,6 +27,7 @@ function MyPub({navigation}){
                         value={title}
                         onChangeText={setTitle}
                     </Input>
+                    <ImageSelector/>
                     <Button
                         title= "Guardar"
                         onPress={handleSavePub}
