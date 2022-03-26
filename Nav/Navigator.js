@@ -14,6 +14,7 @@ import Test1 from "../screen/Test1";
 
 
 
+
 const Stack = createNativeStackNavigator();
 
 function Navigator(){
