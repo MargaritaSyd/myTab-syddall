@@ -8,6 +8,8 @@ import Button from "../components/Button";
 import Input from "../components/Input";
 import { addMyPub } from "../store/actions/myPub.action";
 import ImageSelector from "../components/ImageSelector";
+import LocationSelector from "../components/LocationSelector";
+
 
 
 
@@ -15,6 +17,7 @@ function MyPub({navigation}){
     const dispatch = useDispatch()
     const [title, setTitle] = useState();
     const [image, setImage] = useState();
+    const [location, setLocation] = useState()
 
     const handleSavePub = () => {
         dispatch(addMyPub(title,image))
@@ -31,6 +34,7 @@ function MyPub({navigation}){
                         onChangeText={setTitle}
                     </Input>
                     <ImageSelector onImageSelected={setImage}/>
+                    <LocationSelector onLocationSelected={setLocation}/>
                     <Button
                         title= "Guardar"
                         onPress={handleSavePub}

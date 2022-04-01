@@ -91,13 +91,13 @@ function Navigator(){
                          title: 'Mis recetas'
                      }}
                 />
-                /* <Stack.Screen
+                <Stack.Screen
                     name='OnePubDetail'
                     component={Test1}
                     options={{
                         title: "Detalle de mi bar"
                     }}
-                /> */
+                /> 
             
             </Stack.Navigator>
     )
