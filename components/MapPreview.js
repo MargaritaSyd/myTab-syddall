@@ -1,11 +1,12 @@
 
 import React from "react";
 import {View, Image, StyleSheet} from "react-native"
-import Maps from "../constants/Maps";
+import MAP from "../constants/Maps";
 
-function MapPreview(){
-    const mapPreviewUrl = ""
-
+function MapPreview(location, style, children){
+    const mapPreviewUrl = location
+    ? `https://maps.googleapi.com/maps/api/statismap?center=${location.lat}${location.lng}&zoom=13&size=600x300&maptype=roadmap&markers=color:blue%7Clabel:S%7C${location.lat},${location.lng}&key=${MAP}`
+    : ""
     return (
         <View style={[styles.mapPreview, style]}>
             {location

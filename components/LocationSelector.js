@@ -1,8 +1,8 @@
 import React , { useState} from "react";
 import { View, Image, Text, StyleSheet, Alert } from 'react-native';
 import Button from "./Button";
-import * as Location from 'expo-location'
-
+import * as Location from 'expo-location';
+import MapPreview from "../components/MapPreview";
 import Colors from "../constants/Colors";
 import Typography from "../constants/Typography";
 import { color } from "react-native/Libraries/Components/View/ReactNativeStyleAttributes";
@@ -51,10 +51,10 @@ function LocationSelector({onLocationSelected}){
     return (
         <View>
             <View style={styles.LocationPickerCont}>
-                {pickedLocation
-                ?<Text style={styles.textLocation}> {pickedLocation.lat} , {pickedLocation.lng} </Text>
-                : <Text style={styles.textLocation}> Estamos buscando tu ubicación...</Text>
-                }
+            <MapPreview location={pickedLocation}>
+            <Text style={styles.textLocation}> Estamos buscando tu ubicación...</Text>
+            </MapPreview>  
+             
             </View>
             <Button 
                 title = "Obtener ubicación"
